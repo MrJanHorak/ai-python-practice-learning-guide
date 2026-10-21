@@ -1,6 +1,6 @@
 # Lesson 06: the same task with Anthropic, OpenAI, Gemini and a local LLM
 
-Goal: run the same prompt, tools and evals across providers, then explain what changes in the protocol and what stays in application code. Examples were checked against official documentation on 21 October 2026; choose model IDs actually available to your account/server. No model choice is assumed to be the programme's requirement.
+Goal: run the same prompt, tools and evals across providers, then explain what changes in the protocol and what stays in application code. Examples were checked against official documentation on 21 October 2026; choose model IDs actually available to your account/server. No model choice is assumed to be your project's requirement.
 
 ## 1. Two different uses of models
 
@@ -20,7 +20,7 @@ Goal: run the same prompt, tools and evals across providers, then explain what c
 
 The shared application validates names/arguments, authorizes one write scope, executes tools, stores state and limits steps. The model proposes calls; it does not execute Python or grant permission. The small schema uses required strings; advanced JSON Schema features vary by provider.
 
-The Gemini adapter deliberately uses the documented `generateContent` API. Google's newer Interactions examples use a different conversation/result format; do not mix the two protocols. For native implementation details inspect `examples/ia_prep/providers.py`.
+The Gemini adapter deliberately uses the documented `generateContent` API. Google's newer Interactions examples use a different conversation/result format; do not mix the two protocols. For native implementation details inspect `examples/ai_systems/providers.py`.
 
 ## 3. Configure a provider in PowerShell
 
@@ -30,24 +30,24 @@ Use only the block for the provider you are trying. Read-Host avoids typing the 
 # OpenAI direct API
 $env:OPENAI_API_KEY = Read-Host "OpenAI API key" -MaskInput
 $env:OPENAI_MODEL = Read-Host "Accessible OpenAI model ID with function tools"
-python -m examples.ia_prep chat --provider openai --prompt "Explain a tool call in two sentences"
-python -m examples.ia_prep agent --provider openai --prompt "What is the risk tier for C-1002?"
+python -m examples.ai_systems chat --provider openai --prompt "Explain a tool call in two sentences"
+python -m examples.ai_systems agent --provider openai --prompt "What is the risk tier for C-1002?"
 ```
 
 ```powershell
 # Anthropic direct API
 $env:ANTHROPIC_API_KEY = Read-Host "Anthropic API key" -MaskInput
 $env:ANTHROPIC_MODEL = Read-Host "Accessible Claude model ID"
-python -m examples.ia_prep chat --provider anthropic --prompt "Explain a tool call in two sentences"
-python -m examples.ia_prep agent --provider anthropic --prompt "What is the risk tier for C-1002?"
+python -m examples.ai_systems chat --provider anthropic --prompt "Explain a tool call in two sentences"
+python -m examples.ai_systems agent --provider anthropic --prompt "What is the risk tier for C-1002?"
 ```
 
 ```powershell
 # Gemini Developer API (not a Vertex AI authentication example)
 $env:GEMINI_API_KEY = Read-Host "Gemini API key" -MaskInput
 $env:GEMINI_MODEL = Read-Host "Accessible Gemini model ID supporting generateContent tools"
-python -m examples.ia_prep chat --provider gemini --prompt "Explain a tool call in two sentences"
-python -m examples.ia_prep agent --provider gemini --prompt "What is the risk tier for C-1002?"
+python -m examples.ai_systems chat --provider gemini --prompt "Explain a tool call in two sentences"
+python -m examples.ai_systems agent --provider gemini --prompt "What is the risk tier for C-1002?"
 ```
 
 `-MaskInput` requires PowerShell 7. On Windows PowerShell 5.1, use your approved secret-management method or enter the environment value through your editor's secret configuration. Select a tool-capable model from the provider's current documentation/account, not a model name copied from an old course.
@@ -120,8 +120,8 @@ $env:OLLAMA_MODEL = Read-Host "Local tool-capable model tag to download"
 ollama pull $env:OLLAMA_MODEL
 ollama list
 $env:OLLAMA_HOST = "http://localhost:11434"
-python -m examples.ia_prep chat --provider ollama --prompt "Explain idempotency in two sentences"
-python -m examples.ia_prep agent --provider ollama --prompt "What is the risk tier for C-1002?"
+python -m examples.ai_systems chat --provider ollama --prompt "Explain idempotency in two sentences"
+python -m examples.ai_systems agent --provider ollama --prompt "What is the risk tier for C-1002?"
 ```
 
 The lab's local adapters permit only loopback URLs and reject `:cloud` tags. Still verify the model is downloaded and executes locally; a local UI/server can offer cloud-backed models too. Check the runtime's cloud/network configuration if offline operation is required. Logs, external tools and other services remain separate data paths.
@@ -135,7 +135,7 @@ Ollama also exposes an OpenAI-shaped endpoint. Other local servers, such as LM S
 ```powershell
 $env:LOCAL_OPENAI_BASE_URL = "http://localhost:11434/v1"
 $env:LOCAL_OPENAI_MODEL = $env:OLLAMA_MODEL
-python -m examples.ia_prep agent --provider local-openai --prompt "What is the risk tier for C-1002?"
+python -m examples.ai_systems agent --provider local-openai --prompt "What is the risk tier for C-1002?"
 ```
 
 Equivalent plain-text SDK call, using the `openai` package against the local server:
@@ -158,9 +158,9 @@ The placeholder key is for an unauthenticated loopback server, never a real remo
 ## 7. Compare behavior with the same exercise
 
 ```powershell
-python -m examples.ia_prep eval --provider mock
+python -m examples.ai_systems eval --provider mock
 # After configuring ONE provider; live eval makes several billable model calls.
-python -m examples.ia_prep eval --provider openai
+python -m examples.ai_systems eval --provider openai
 # Repeat with anthropic, gemini, ollama or local-openai when configured.
 ```
 

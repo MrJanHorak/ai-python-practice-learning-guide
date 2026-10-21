@@ -1,6 +1,6 @@
 # Lesson 07: Azure from access to extraction and deployment
 
-Goal: explain the identity, endpoint, data contract and failure at every boundary. Start with the programme's approved sandbox. Azure account access, allowed regions, quotas, service features and pricing depend on your organisation and subscription; confirm them before provisioning anything. The instructions below do not create resources automatically.
+Goal: explain the identity, endpoint, data contract and failure at every boundary. Start with your project's approved sandbox. Azure account access, allowed regions, quotas, service features and pricing depend on your organisation and subscription; confirm them before provisioning anything. The instructions below do not create resources automatically.
 
 ## 1. Prerequisites and access worksheet
 
@@ -21,8 +21,8 @@ The browser's portal session, Azure CLI developer identity and deployed app iden
 ## 2. Offline baseline before spending time on Azure
 
 ```powershell
-python -m examples.ia_prep validate
-python -m examples.ia_prep profile
+python -m examples.ai_systems validate
+python -m examples.ai_systems profile
 python -m unittest discover -s tests -v
 ```
 
@@ -42,7 +42,7 @@ Install only the Python dependencies needed for this step:
 python -m pip install azure-ai-documentintelligence azure-identity
 $env:DOCUMENTINTELLIGENCE_ENDPOINT = Read-Host "Document Intelligence resource endpoint"
 # Default: use DefaultAzureCredential with a correctly permissioned developer identity.
-python -m examples.ia_prep.azure_extract --file data/documents/invoice-clean.pdf --customer-id C-1001
+python -m examples.ai_systems.azure_extract --file data/documents/invoice-clean.pdf --customer-id C-1001
 ```
 
 For a sandbox explicitly using service keys, set `DOCUMENTINTELLIGENCE_API_KEY` through the approved secret method. The extractor uses the key only when that environment variable is nonempty; otherwise it uses Entra credentials. The resource/endpoint must support the chosen authentication method. Do not reuse an OpenAI/Gemini key for Document Intelligence.
@@ -52,7 +52,7 @@ The extractor calls `prebuilt-invoice`, waits with an SDK poller, saves the raw 
 The normalizer maps `InvoiceId`, `VendorName`, `InvoiceDate` and `InvoiceTotal` into the lab schema. Confidence or currency codes may be absent. Inspect the actual raw result instead of filling missing values with invented defaults.
 
 ```powershell
-python -m examples.ia_prep validate --file output/azure-normalized.json
+python -m examples.ai_systems validate --file output/azure-normalized.json
 ```
 
 Repeat extraction with the other two PDFs and distinct `--output` paths. Compare values with the manifest; do not expect live confidence values to match the saved JSON fixtures.
@@ -62,11 +62,11 @@ Repeat extraction with the other two PDFs and distinct `--output` paths. Compare
 Create field-level labels from the PDF itself. Measure missing/incorrect fields as well as successful extraction. Run the fixtures at different thresholds:
 
 ```powershell
-python -m examples.ia_prep validate --threshold 0.8
-python -m examples.ia_prep validate --threshold 0.9
+python -m examples.ai_systems validate --threshold 0.8
+python -m examples.ai_systems validate --threshold 0.9
 ```
 
-The demo's default 0.85 is an invented training setting. Establish review thresholds from representative labels, business consequences and applicable programme risk standards. A high-confidence supplier-name mismatch still needs review; missing confidence requires an explicit decision. Read [Microsoft's confidence guidance](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/concept/accuracy-confidence?view=doc-intel-4.0.0).
+The demo's default 0.85 is an invented training setting. Establish review thresholds from representative labels, business consequences and applicable learning path risk standards. A high-confidence supplier-name mismatch still needs review; missing confidence requires an explicit decision. Read [Microsoft's confidence guidance](https://learn.microsoft.com/en-us/azure/ai-services/document-intelligence/concept/accuracy-confidence?view=doc-intel-4.0.0).
 
 The fixture validator treats free-text notes as data. That does not establish that a language model resists injection. Supply the adversarial note to a real model as clearly delimited document content, keep writes disabled, and inspect its proposed calls. Then verify the application's scoped authorization still blocks an unauthorized call.
 
@@ -82,22 +82,22 @@ When a managed identity is available, adding Key Vault does not mean every servi
 
 ## 6. Azure OpenAI is a separate model-hosting exercise
 
-If the programme uses Azure OpenAI, obtain its v1 base URL and accessible model deployment name. The CLI's `--provider openai` calls the direct OpenAI service; it does not target Azure. This optional SDK example demonstrates an Azure call using Entra authentication:
+If the learning path uses Azure OpenAI, obtain its v1 base URL and accessible model deployment name. The CLI's `--provider openai` calls the direct OpenAI service; it does not target Azure. This optional SDK example demonstrates an Azure call using Entra authentication:
 
 ```powershell
 python -m pip install openai azure-identity
 $env:AZURE_OPENAI_V1_BASE_URL = Read-Host "Azure OpenAI v1 base URL ending /openai/v1/"
 $env:AZURE_OPENAI_DEPLOYMENT = Read-Host "Accessible model deployment name"
-python -m examples.ia_prep.azure_openai_chat
+python -m examples.ai_systems.azure_openai_chat
 ```
 
-Inspect `examples/ia_prep/azure_openai_chat.py`: it uses the OpenAI Python client with the Azure base URL, an Entra token provider and your deployment name. Verify Responses support for the actual deployment/API. Other Foundry model deployments and Gemini on Vertex AI require their own endpoint/authentication setup; they are not interchangeable credential substitutions.
+Inspect `examples/ai_systems/azure_openai_chat.py`: it uses the OpenAI Python client with the Azure base URL, an Entra token provider and your deployment name. Verify Responses support for the actual deployment/API. Other Foundry model deployments and Gemini on Vertex AI require their own endpoint/authentication setup; they are not interchangeable credential substitutions.
 
 Reference: [Microsoft's OpenAI/Azure endpoint comparison](https://learn.microsoft.com/en-us/azure/foundry-classic/openai/how-to/switching-endpoints).
 
 ## 7. Deployment rehearsal
 
-Day 9's Phase 1 deliverable is a justified deployment plan. The later Document Intelligence block includes deployment. For hands-on practice, use the programme's approved hosting path; [the Container Apps source-deployment tutorial](https://learn.microsoft.com/en-us/azure/container-apps/quickstart-code-to-cloud) is one optional learning route.
+A first project can finish with a justified deployment plan; a later exercise can deploy and operate it. Use your project's approved hosting path, or a suitable personal learning subscription. [The Container Apps source-deployment tutorial](https://learn.microsoft.com/en-us/azure/container-apps/quickstart-code-to-cloud) is one optional learning route.
 
 Before deploying this practice app, decide how the approved host will provide authentication/private access, environment configuration, durable state and logs. The sample Streamlit UI is a local single-user teaching interface, and the SQLite file is local persistence. A container's ephemeral disk is not a durable multi-instance review database. Use an approved durable store and appropriate access controls for a hosted adaptation.
 

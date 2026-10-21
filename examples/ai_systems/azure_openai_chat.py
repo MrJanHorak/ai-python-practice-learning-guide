@@ -1,7 +1,7 @@
 """Optional Azure OpenAI v1 Responses SDK example with Microsoft Entra ID.
 
 python -m pip install openai azure-identity
-python -m examples.ia_prep.azure_openai_chat
+python -m examples.ai_systems.azure_openai_chat
 """
 import os
 from azure.identity import DefaultAzureCredential, get_bearer_token_provider

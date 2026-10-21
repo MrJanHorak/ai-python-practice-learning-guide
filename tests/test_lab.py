@@ -8,11 +8,11 @@ from pathlib import Path
 from types import SimpleNamespace as NS
 from unittest.mock import patch
 
-from examples.ia_prep.__main__ import evaluate
-from examples.ia_prep.azure_extract import normalize_document
-from examples.ia_prep.core import DATA, ROOT, TOOLS, ReviewStore, ToolContext, profile_csv, read_json, search_policy, validate_extraction
-from examples.ia_prep.providers import Conversation, MockConversation, ProviderError, ToolCall, Turn, local_url, run_agent
-from examples.ia_prep.scoring import Customer, score
+from examples.ai_systems.__main__ import evaluate
+from examples.ai_systems.azure_extract import normalize_document
+from examples.ai_systems.core import DATA, ROOT, TOOLS, ReviewStore, ToolContext, profile_csv, read_json, search_policy, validate_extraction
+from examples.ai_systems.providers import Conversation, MockConversation, ProviderError, ToolCall, Turn, local_url, run_agent
+from examples.ai_systems.scoring import Customer, score
 
 
 class LabTests(unittest.TestCase):

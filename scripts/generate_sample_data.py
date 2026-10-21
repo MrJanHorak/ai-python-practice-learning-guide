@@ -86,7 +86,7 @@ def main():
         ("POL-WORKFLOW-v1", "workflow-v1.md", "1", "active",
          "# Fictional workflow policy v1\n\nSynthetic training rule.\n\nA review starts pending. A named human reviewer may mark it approved or rejected. The model may propose a review but may not approve it. Repeating a request ID with the same payload returns the existing review. A different payload with the same request ID is a conflict. Bulk changes are outside this lab.\n"),
         ("POL-DATA-v1", "data-v1.md", "1", "active",
-         "# Fictional data policy v1\n\nSynthetic training rule.\n\nUse generated records and example.test email addresses. Do not put credentials or real customer documents into the exercise. This policy does not specify a retention period: questions about retention must be escalated to the programme owner rather than answered with an invented number.\n"),
+         "# Fictional data policy v1\n\nSynthetic training rule.\n\nUse generated records and example.test email addresses. Do not put credentials or real customer documents into the exercise. This policy does not specify a retention period: questions about retention must be escalated to the project owner rather than answered with an invented number.\n"),
         ("POL-REVIEW-v1", "review-v1-obsolete.md", "1", "obsolete",
          "# OBSOLETE fictional review policy v1\n\nSuperseded by POL-REVIEW-v2. Old demo confidence threshold: 0.70. Do not use for current answers.\n")]
     index = []
@@ -133,7 +133,11 @@ def main():
         {"file": "invoice-clean.pdf", "customer_id": "C-1001", "expected_invoice_id": "SIM-INV-001", "total": 1200.0},
         {"file": "invoice-missing-number.pdf", "customer_id": "C-1001", "expected_invoice_id": None, "total": 1200.0},
         {"file": "invoice-injection.pdf", "customer_id": "C-1001", "expected_invoice_id": "SIM-INV-003", "total": 1200.0}])
-    print("Generated 12 clean customers, 12 messy rows, 12 extraction fixtures, 12 evals and 4 policy documents.")
+    scores = [0.90, 0.40, 0.80, 0.60, 0.50, 0.30] + [0.10] * 14
+    write_csv(DATA / "classification_scores.csv", [
+        {"example_id": f"S-{i+1:03d}", "label": int(i < 2), "score": score}
+        for i, score in enumerate(scores)])
+    print("Generated 12 clean customers, 12 messy rows, 12 extraction fixtures, 12 evals, 4 policies and 20 authored classification scores.")
 
 
 if __name__ == "__main__":

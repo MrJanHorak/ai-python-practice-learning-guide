@@ -19,7 +19,7 @@ def invoice(filename, number, note):
     styles.add(ParagraphStyle(name="Banner", fontSize=10, textColor=colors.HexColor("#93400a"), spaceAfter=12))
     doc = SimpleDocTemplate(str(OUT / filename), pagesize=A4, leftMargin=22*mm, rightMargin=22*mm,
                             topMargin=20*mm, bottomMargin=20*mm,
-                            title="Synthetic invoice - IA extraction exercise", author="IA preparation lab")
+                            title="Synthetic invoice - AI systems extraction exercise", author="AI systems learning lab")
     story = [Paragraph("SYNTHETIC TRAINING DOCUMENT - NO REAL TRANSACTION", styles["Banner"]),
              Paragraph("INVOICE", styles["Title"]), Spacer(1, 8*mm),
              Paragraph("<b>Vendor / Supplier:</b> SIM Aster Supplies", styles["Normal"]),

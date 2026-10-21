@@ -1,8 +1,8 @@
-# Python Cheat Sheet for the MTA Builder Programme
+# Python Cheat Sheet for the AI Systems Learning Guide
 
-Goal: read Python fluently, run it, test it, and diagnose failures. You do not need to be an expert writer. Since you already work in JavaScript/TypeScript, each section maps Python to the JS/TS idea you know.
+Goal: read Python, run it, test it and diagnose failures. You do not need to be an expert writer. If you know JavaScript/TypeScript, the comparison table may help; otherwise focus on the Python examples and the linked beginner tutorial.
 
-Runnable code now lives in `examples/ia_prep/`. Start at [README](README.md), then use [the provider lab](06-model-provider-lab.md) for Anthropic, OpenAI, Gemini and local-model equivalents. No provider is assumed to be the programme's final choice.
+Runnable code now lives in `examples/ai_systems/`. Start at [README](README.md), then use [the provider lab](06-model-provider-lab.md) for Anthropic, OpenAI, Gemini and local-model equivalents. No provider is assumed to be your project's final choice.
 
 ---
 
@@ -36,7 +36,7 @@ On Windows PowerShell, from the repository root:
 ```powershell
 py -3 -m venv .venv
 .\.venv\Scripts\python.exe --version
-.\.venv\Scripts\python.exe -m examples.ia_prep agent --provider mock
+.\.venv\Scripts\python.exe -m examples.ai_systems agent --provider mock
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 # Optional dependencies only; choose packages needed by your lesson:
 .\.venv\Scripts\python.exe -m pip install pytest pydantic
@@ -106,10 +106,12 @@ Read **bottom-up**: the last line is the error type and message (`KeyError: 'nam
 
 ## 4. pytest essentials
 
+For a step-by-step explanation and runnable exercises, use [lesson 14: pytest](14-pytest-tutorial.md). This section is a quick reference once you have written your first test.
+
 ```python
 # tests/test_scoring.py
 import pytest
-from examples.ia_prep.scoring import score, Customer
+from examples.ai_systems.scoring import score, Customer
 
 def test_high_risk_goes_to_review():
     assert score(Customer("A", 0.9)) == "review"
@@ -134,7 +136,7 @@ pytest -s                   # show print output
 
 Diagnosis routine for a failing test: (1) read the assertion diff, (2) run just that test, (3) check fixtures/inputs, (4) ask: is the code wrong, the test wrong, or the environment wrong?
 
-The runnable equivalent is `examples/ia_prep/scoring.py`. The range check makes the negative-score test meaningful. Learn pytest fixtures for repeated setup, `tmp_path` for isolated state, and `monkeypatch` for replacing network/configuration dependencies. Keep live model tests separate from offline checks; see the unittest examples in `tests/test_lab.py` for the same principles without additional packages.
+The runnable equivalent is `examples/ai_systems/scoring.py`. The range check makes the negative-score test meaningful. Learn pytest fixtures for repeated setup, `tmp_path` for isolated state, and `monkeypatch` for replacing network/configuration dependencies. Keep live model tests separate from offline checks; see the unittest examples in `tests/test_lab.py` for the same principles without additional packages.
 
 ## 5. Data shapes: JSON, dicts and Pydantic
 
@@ -161,7 +163,7 @@ Pydantic is how many Python agent projects define the **output contract** and to
 Use [lesson 06](06-model-provider-lab.md) for side-by-side SDK snippets and native REST implementations for OpenAI, Anthropic, Gemini and local Ollama. Start without credentials:
 
 ```powershell
-python -m examples.ia_prep chat --provider mock --prompt "Explain what this lab does"
+python -m examples.ai_systems chat --provider mock --prompt "Explain what this lab does"
 ```
 
 The following Anthropic snippet remains a vendor-specific illustration. Configure an accessible model rather than assuming one name.
@@ -190,11 +192,11 @@ print(msg.usage.input_tokens, msg.usage.output_tokens)   # for cost-to-serve mat
 
 ## 7. A bounded tool-use loop (the heart of an agent)
 
-The complete shared loop is `run_agent` in `examples/ia_prep/providers.py`. It bounds model steps and tool calls, validates tool arguments in application code and returns a trace. Each provider's conversation class encodes native tool requests/results.
+The complete shared loop is `run_agent` in `examples/ai_systems/providers.py`. It bounds model steps and tool calls, validates tool arguments in application code and returns a trace. Each provider's conversation class encodes native tool requests/results.
 
 ```python
-from examples.ia_prep.core import ROOT, TOOLS, ReviewStore, ToolContext
-from examples.ia_prep.providers import MockConversation, run_agent
+from examples.ai_systems.core import ROOT, TOOLS, ReviewStore, ToolContext
+from examples.ai_systems.providers import MockConversation, run_agent
 
 store = ReviewStore(ROOT / "output/cheatsheet.sqlite3")
 try:
@@ -271,8 +273,8 @@ cases = [
 
 def run_agent(prompt):
     """Return (final_text, [tool_names_called]). Wrap your agent loop here."""
-    from examples.ia_prep.core import TOOLS, ReviewStore, ToolContext
-    from examples.ia_prep.providers import MockConversation, run_agent as execute
+    from examples.ai_systems.core import TOOLS, ReviewStore, ToolContext
+    from examples.ai_systems.providers import MockConversation, run_agent as execute
     store = ReviewStore(":memory:")
     try:
         result = execute(MockConversation(prompt), ToolContext(store, "tiny-eval"), TOOLS)
@@ -302,7 +304,7 @@ print(json.dumps(report, indent=2))
 
 This one file demonstrates: eval set, trajectory check (tool selection), failure taxonomy labels, and a pass rate you can track across changes (regression).
 
-The standalone Anthropic sketch uses illustrative customer C-1042; the runnable dataset and harness use C-1001 through C-1012. Run the complete starter evals with `python -m examples.ia_prep eval --provider mock`; replace the provider only after configuring it. A scripted pass verifies wiring, not model quality. The live checks use simple expected tool sequences and selected answer substrings; inspect false positives/negatives manually.
+The standalone Anthropic sketch uses illustrative customer C-1042; the runnable dataset and harness use C-1001 through C-1012. Run the complete starter evals with `python -m examples.ai_systems eval --provider mock`; replace the provider only after configuring it. A scripted pass verifies wiring, not model quality. The live checks use simple expected tool sequences and selected answer substrings; inspect false positives/negatives manually.
 
 ## 9. A minimal MCP server (Python)
 
@@ -343,10 +345,10 @@ This simplified calculator uses aggregate per-request token counts. Agent runs c
 ## 11. Git worktree quick reference
 
 ```bash
-git worktree add ../mta-feature-a -b feature-a   # new dir + new branch
+git worktree add ../learning-feature-a -b feature-a   # new dir + new branch
 git worktree list
-cd ../mta-feature-a                              # run a second agent session here
-git worktree remove ../mta-feature-a             # when done
+cd ../learning-feature-a                              # run a second agent session here
+git worktree remove ../learning-feature-a             # when done
 ```
 
 ## 12. Python debugging toolkit
@@ -372,6 +374,6 @@ pytest --pdb                  # drop into debugger on failure
 
 ## 14. HTTP, service operations and asynchronous code
 
-Trace one request through URL, method, authentication, JSON body, HTTP status and response schema. A 401, 403, 429 or timeout suggests different first checks; see [the troubleshooting playbook](09-ia-troubleshooting-and-assessment.md). Do not blindly retry non-idempotent writes. The sample model transport uses a 45-second per-request timeout and no automatic retries.
+Trace one request through URL, method, authentication, JSON body, HTTP status and response schema. A 401, 403, 429 or timeout suggests different first checks; see [the troubleshooting playbook](09-mentor-troubleshooting-and-assessment.md). Do not blindly retry non-idempotent writes. The sample model transport uses a 45-second per-request timeout and no automatic retries.
 
 An SDK poller waits for a long-running server operation. Python `async def` controls concurrency in the client. Understand both before trying to fix latency by adding `async`. Add bounded backoff only after reproducing the error and deciding whether a retry is appropriate.

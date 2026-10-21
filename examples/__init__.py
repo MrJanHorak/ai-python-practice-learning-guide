@@ -1,1 +1,1 @@
-"""Small, readable teaching examples for IA preparation."""
+"""Small, readable teaching examples for AI systems learning."""

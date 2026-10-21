@@ -10,12 +10,13 @@ All records, documents and policy rules here were authored for learning. They co
 | `customers_messy.csv` | 12 rows with deliberately planted defects | Data profiling and readiness note |
 | `extraction_fixtures.json` | 12 hand-authored normalized invoice extractions | Validation, confidence, recovery and injected text |
 | `eval_cases.json` | 12 prompts plus evaluator-only expectations | Tool trajectory, answer and state checks |
+| `classification_scores.csv` | 20 invented binary labels and scores, including two positive cases | Precision, recall, thresholds and misleading accuracy in lesson 12 |
 | `policies/index.json` and four policy Markdown files | Three active documents and one obsolete version | Retrieval, citations, versioning and insufficient evidence |
 | `document_manifest.json` | Known values for the three synthetic source PDFs | Manual comparison of actual Azure extraction |
 | `documents/invoice-clean.pdf` | Original native-text invoice with fields/table | First live extraction |
 | `documents/invoice-missing-number.pdf` | Invoice with missing identifier | Missing-field diagnosis |
 | `documents/invoice-injection.pdf` | Invoice containing explicitly adversarial notes | Untrusted document context and application boundaries |
-| `answers/` | Authored profile/extraction labels and five retrieval questions | Evaluator/IA reference; keep outside model context |
+| `answers/` | Authored profile/extraction labels and five retrieval questions | Evaluator/Mentor reference; keep outside model context |
 
 ## CSV dictionary
 

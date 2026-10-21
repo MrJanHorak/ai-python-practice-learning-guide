@@ -1,0 +1,2 @@
+# PDF cross-reference offsets and required padding are binary document data.
+*.pdf binary

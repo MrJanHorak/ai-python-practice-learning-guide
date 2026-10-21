@@ -1,20 +1,21 @@
 # Vocabulary Glossary: Business Language and Frequent Words
 
-Skim this twice before Day 1 and once more at the end of each week. Terms are grouped by the order you'll meet them. The "Watch for" notes are the most common learner confusions.
+Use this as a reference while building the sample project. Explain terms in your own words and connect them to an observed behavior. The "Watch for" notes highlight common learner confusions.
 
 ---
 
-## A. Programme framing
+## A. Learning and project roles
 
 | Term | Meaning | Watch for |
 |---|---|---|
-| **MTA Graduate** | Programme label for the participant building and defending the POC. Confirm the formal acronym expansion with the lead. | The deck emphasizes code literacy and agent-led work, rather than writing Python from scratch. |
-| **CTD** | Programme label for the team receiving the handoff. Confirm formal responsibilities with the lead. | The **ownership line** between MTA Graduate and CTD is a Day 1 topic. |
+| **Learner** | Person building understanding through reading, experiments and a working project. | Running a demo and explaining its behavior are different skills. |
+| **Mentor** | Person who helps a learner reason, practise, diagnose failures and review evidence. | Use questions and staged hints so the learner retains ownership. |
+| **Implementation team** | People who take a prototype toward a maintainable deployed system. | Agree what is demonstrated, what remains incomplete and who owns the next step. |
 | **POC** | Proof of concept. | The **POC floor** = working data layer + agent + interface. |
-| **Six lenses** | Business, Customer, Code, Risk, Data, Environment. The shared framework for every decision. | Full six-lens mastery is reserved for the Capstone. |
-| **Anchor case** | The AML/KYC use case used across the programme. | Learners are assigned specific use cases within it. |
-| **Protected Learning (PL)** | Four-hour Friday sessions after the 10-day phase, in four blocks. | Block 1 uses Azure Document Intelligence. |
-| **Handoff brief** | Document that transfers the solution to CTD. | Peer-reviewed and defended live on Day 10. |
+| **Review dimensions** | User value, experience, software quality, risk, data and deployment environment. | Use them to examine tradeoffs; they are not a certification framework. |
+| **Running example** | Fictional onboarding/document review used to connect the lessons. | Its rules are invented for teaching, not domain requirements. |
+| **Extension sessions** | Optional deeper practice in extraction, workflows, retrieval and deployment. | Choose a topic once the core system makes sense. |
+| **Handoff brief** | Document that transfers scope, evidence, limitations and operating instructions to the next owner. | Explain what works, what was tested and what still needs engineering. |
 
 ## B. Discovery and specification
 
@@ -23,11 +24,11 @@ Skim this twice before Day 1 and once more at the end of each week. Terms are gr
 | **Discovery checklist** | Questions that turn an ambiguous request into a scoped use case (users, data, constraints, success measures). | Learners skip "who owns the data?" |
 | **Backlog** | Prioritized list of work items. | Each item needs **acceptance criteria**. |
 | **Acceptance criteria** | Testable conditions that define "done" for a backlog item. | "Works well" is not testable. |
-| **Data readiness note** | Written assessment of data gaps and who closes them. | Day 1 deliverable. |
+| **Data readiness note** | Written assessment of data gaps and who closes them. | Do this before relying on data in a build. |
 | **Lineage** | Where data came from and how it was transformed. | Unknown lineage = risk. |
 | **Latency / refresh cadence** | How stale the data can be, and how often it updates. | Constrains what can be built. |
 | **Specification (spec)** | Instruction precise enough that an agent implements it correctly. | Vague: "make it robust". Executable: names inputs, outputs, errors, tests. |
-| **PRD** | Product requirements document. Here: edge cases plus pseudocode-level detail. | At least three real edge cases (Day 3). |
+| **PRD** | Product requirements document. Here: edge cases plus pseudocode-level detail. | At least three real edge cases. |
 | **Edge case** | Unusual but realistic input or state (blank field, name transliteration, expired ID). | Learners list only happy paths. |
 | **Pseudocode** | Plain-language logic outline, close to code but not tied to a language. | |
 
@@ -75,7 +76,7 @@ Skim this twice before Day 1 and once more at the end of each week. Terms are gr
 | **Compaction** | Summarizing long history to free context. | Can drop critical details. |
 | **File-system context** | Using files as external memory the agent reads and writes. | |
 | **Tool output** | Results returned by tools; consume context too. | Oversized tool output is a common bug. |
-| **Right capability, wrong information** | The Day 4 diagnosis: model could do it but lacked or was swamped by the right data. | |
+| **Right capability, wrong information** | A model may have the required ability but lack relevant evidence or receive too much irrelevant context. | Inspect exactly what was provided at the failing step. |
 
 ## F. Tools and MCP
 
@@ -135,7 +136,7 @@ Skim this twice before Day 1 and once more at the end of each week. Terms are gr
 | **Correlation ID** | Identifier connecting a user request with logs and downstream calls. | Trace failures without logging credentials or sensitive documents. |
 | **Long-running operation / poller** | Service starts work and exposes progress/results later. SDK pollers wrap that process. | This is separate from Python's `async` syntax. |
 | **Persistent workflow state** | Saved progress that survives process restart. | An in-memory variable is lost when the app restarts. |
-| **Microsoft Foundry** | Current Microsoft branding for its AI application and agent platform. | Confirm which portal, SDK and resource type the programme uses. |
+| **Microsoft Foundry** | Current Microsoft branding for its AI application and agent platform. | Confirm which portal, SDK and resource type the learning path uses. |
 
 ## Provider and local-model vocabulary
 
@@ -147,7 +148,7 @@ Skim this twice before Day 1 and once more at the end of each week. Terms are gr
 | **Local inference / model weights** | Inference runs a downloaded model on your machine using a model server. | Download size, RAM/VRAM, quantization, license and tool support vary. |
 | **Mock / fixture** | Scripted behavior or saved data used for repeatable tests. | A passing mock test does not establish model accuracy or live access. |
 
-## I. AML/KYC domain
+## I. Optional domain vocabulary: AML/KYC
 
 | Term | Meaning |
 |---|---|
@@ -165,5 +166,7 @@ Skim this twice before Day 1 and once more at the end of each week. Terms are gr
 ---
 
 ## Quick self-test
+
+See [foundations](11-ai-systems-foundations.md) for model/application/system, training/inference, tokens, embeddings and retrieval; [evaluation](12-evaluation-and-experiments.md) for precision/recall, holdouts and leakage; and [pytest](14-pytest-tutorial.md) for fixtures, parametrization and test doubles.
 
 Explain each in one sentence without looking: worktree, idempotent, JIT search, compaction, failure taxonomy, trajectory eval, Autonomy Ladder, cost-to-serve, human approval gate, confidence threshold, UBO.

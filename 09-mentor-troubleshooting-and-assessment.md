@@ -1,6 +1,6 @@
-# Lesson 09: IA troubleshooting, coaching and assessment evidence
+# Lesson 09: Mentor troubleshooting, coaching and assessment evidence
 
-Goal: help the learner explain and resolve a failure while retaining ownership of their work. Confirm your grading responsibilities, support ratio, escalation contacts and expected availability with the programme lead. These coaching suggestions are not an official assessment rubric.
+Goal: help the learner explain and resolve a failure while retaining ownership of their work. Agree on the mentoring scope, review responsibilities, escalation contacts and availability. A learner studying independently can use the same questions for self-review or peer support.
 
 ## A short support routine
 
@@ -53,18 +53,18 @@ For advanced practice, run the injection PDF through a real model with writes di
 
 ## Assessment evidence map
 
-The deck describes the following evidence; obtain the official criteria and threshold details from the lead.
+Use the following evidence to review understanding. Agree project-specific acceptance criteria with the learner and project owner, or use a peer review for self-study.
 
-| Programme point | Evidence folder contents | IA observation |
+| Learning path point | Evidence folder contents | Mentor observation |
 |---|---|---|
-| Pre-programme/start | Code/diff reading, scoped brief, dataset quality findings and tool-comfort baseline | Where does this learner need pacing/support? |
-| Days 1-3 | Discovery checklist, prioritized backlog, data readiness note, executable spec, PRD, initial cost estimate and baseline evals | Are requirements testable and edge cases realistic? |
-| Days 4-6 | Context strategy, scoped tool integration and working data + agent + interface | Can the learner trace a request and justify autonomy? |
-| Days 7-8 | Eval report, failure taxonomy, red-team gaps, risk checklist and ownership/approval decisions | Do checks cover tools, trajectory, state and recovery? |
-| Days 9-10 | Deployment plan, cost model, peer-reviewed handoff brief and live defense | Are scope, limitations and next owner clear? |
-| Later capstone | Integrated extraction/workflow/knowledge solution, governance evidence, technical/executive reports and defense | Fluency across all six lenses; confirm mentor/review requirements |
+| Starting point | Code/diff reading, scoped brief, dataset quality findings and tool-comfort baseline | Where does this learner need pacing/support? |
+| Scope and data | Discovery checklist, prioritized backlog, readiness note, spec, initial cost estimate and baseline evals | Are requirements testable and edge cases realistic? |
+| Working system | Context strategy, scoped tool integration and working data + agent + interface | Can the learner trace a request and justify autonomy? |
+| Evaluation and risk | Eval report, failure taxonomy, adversarial cases and ownership/approval decisions | Do checks cover tools, trajectory, state and recovery? |
+| Handoff | Deployment plan, cost model, peer-reviewed brief and explanation | Are scope, limitations and next owner clear? |
+| Transfer project | A second use case with independently chosen architecture and evaluation | Can the learner apply the ideas without copying the first design? |
 
-The supplied twelve eval cases are not the graduation threshold. Do not invent a universal pass percentage or treat a mock pass as evidence of learner mastery. Calibrate feedback with the lead using examples of strong, borderline and incomplete work.
+The supplied twelve eval cases are starter checks. Do not invent a universal pass percentage or treat a mock pass as evidence of learner mastery. Calibrate feedback with examples of strong, borderline and incomplete work. A self-studying learner can record a teach-back and review it against the same criteria.
 
 ## Support-note template
 

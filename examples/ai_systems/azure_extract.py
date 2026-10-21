@@ -1,6 +1,6 @@
 """Live Azure Document Intelligence extraction; run only with an approved resource.
 
-python -m examples.ia_prep.azure_extract --file data/documents/invoice-clean.pdf --customer-id C-1001
+python -m examples.ai_systems.azure_extract --file data/documents/invoice-clean.pdf --customer-id C-1001
 """
 import argparse
 import json

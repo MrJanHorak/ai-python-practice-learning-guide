@@ -1,4 +1,4 @@
-"""Optional local interface: python -m streamlit run examples/ia_prep/ui.py"""
+"""Optional local interface: python -m streamlit run examples/ai_systems/ui.py"""
 import json
 import sys
 import uuid
@@ -7,10 +7,10 @@ from pathlib import Path
 # Streamlit executes this as a script; expose the repo for absolute imports.
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 import streamlit as st
-from examples.ia_prep.core import DATA, ROOT, TOOLS, ReviewStore, ToolContext, customers, read_json, validate_extraction
-from examples.ia_prep.providers import Conversation, MockConversation, run_agent
+from examples.ai_systems.core import DATA, ROOT, TOOLS, ReviewStore, ToolContext, customers, read_json, validate_extraction
+from examples.ai_systems.providers import Conversation, MockConversation, run_agent
 
-st.set_page_config(page_title="IA practice lab")
+st.set_page_config(page_title="AI systems practice lab")
 st.title("Synthetic onboarding review lab")
 st.caption("Fictional training data and rules. Mock is scripted; live provider choices send the prompt and tool results to that service.")
 

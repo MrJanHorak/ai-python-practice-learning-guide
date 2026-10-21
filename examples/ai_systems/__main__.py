@@ -1,4 +1,4 @@
-"""Commands run from repo root: python -m examples.ia_prep --help."""
+"""Commands run from repo root: python -m examples.ai_systems --help."""
 import argparse
 import json
 import tempfile
@@ -46,7 +46,7 @@ def evaluate(provider, model=None):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Synthetic IA preparation lab; see README.md")
+    parser = argparse.ArgumentParser(description="Synthetic AI systems learning lab; see README.md")
     sub = parser.add_subparsers(dest="command", required=True)
     profile = sub.add_parser("profile")
     profile.add_argument("--file", type=Path, default=DATA / "customers_messy.csv")

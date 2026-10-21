@@ -1,6 +1,6 @@
 # Lesson 10: reusable project and teaching templates
 
-Copy sections into your own evidence folder. Replace bracketed prompts with concrete, testable statements. These are practice templates; use the programme's official standards and rubric where provided.
+Copy sections into your own evidence folder. Replace bracketed prompts with concrete, testable statements. These are practice templates; use your project's official standards and rubric where provided.
 
 ## 1. Executable specification for any coding agent
 
@@ -21,7 +21,7 @@ Completion report: explain the diff, checks run and remaining limitations.
 
 Use this exact practice request with Claude Code, OpenAI Codex or Gemini CLI:
 
-> In `examples/ia_prep/core.py`, extend `profile_csv` to flag an email with leading or trailing whitespace using the label `email_whitespace`. Preserve the existing labels. Add one isolated synthetic test proving the whitespace case is detected and a valid address remains accepted. Run the offline suite and explain the diff. Do not change provider integrations or the existing fixtures to make tests pass.
+> In `examples/ai_systems/core.py`, extend `profile_csv` to flag an email with leading or trailing whitespace using the label `email_whitespace`. Preserve the existing labels. Add one isolated synthetic test proving the whitespace case is detected and a valid address remains accepted. Run the offline suite and explain the diff. Do not change provider integrations or the existing fixtures to make tests pass.
 
 This is an exercise to perform in a branch/worktree, not an unimplemented requirement of the current sample.
 
@@ -84,12 +84,14 @@ Run ID/date and code revision:
 Provider, exact model/deployment/tag and API:
 SDK/server/runtime version and settings:
 Dataset/corpus version and reference date:
+Development cases vs held-out evaluation, with related records grouped:
 Case ID, input, independently authored expected outcome:
 Expected tools/arguments, state and recovery:
 Actual trajectory, state, final answer and citations:
 Failure category and severity:
 Manual review of automatic grading:
 Change made and regression result:
+Baseline comparison, error costs and uncertainty/variation:
 ```
 
 | Provider/model | Cases passed / total | Tool/state failures | Grounding/citation issues | Warm latency | Usage and actual cost | Notes |
@@ -118,7 +120,7 @@ Practice resource inventory and cleanup date/owner:
 
 Runbook: environment prerequisites -> install -> configure -> smoke test -> start -> reproduce common failure -> recover -> verify state -> escalate. Never include literal secrets. A budget alert is not a hard spending cap.
 
-## 7. CTD handoff and live defense
+## 7. Implementation handoff and project review
 
 ```text
 Purpose, user and demonstrated outcome:
