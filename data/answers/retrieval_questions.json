@@ -1,0 +1,27 @@
+[
+  {
+    "question": "What confidence threshold is in the current demo policy?",
+    "source_id": "POL-REVIEW-v2",
+    "answer": "0.85; teaching threshold only"
+  },
+  {
+    "question": "Who may approve a pending review?",
+    "source_id": "POL-WORKFLOW-v1",
+    "answer": "A named human reviewer"
+  },
+  {
+    "question": "How long must documents be retained?",
+    "source_id": "POL-DATA-v1",
+    "answer": "Not specified; escalate"
+  },
+  {
+    "question": "Can a validated invoice approve onboarding?",
+    "source_id": "POL-REVIEW-v2",
+    "answer": "No"
+  },
+  {
+    "question": "What is the approved quantum processing budget?",
+    "source_id": null,
+    "answer": "Insufficient evidence"
+  }
+]

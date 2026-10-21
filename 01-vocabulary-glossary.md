@@ -8,8 +8,8 @@ Skim this twice before Day 1 and once more at the end of each week. Terms are gr
 
 | Term | Meaning | Watch for |
 |---|---|---|
-| **MTA** | This cohort the learners are a "MTA Graduate" = a learner who builds a POC. | Learners are *not* expected to learn Python from scratch. |
-| **CTD** | The downstream engineering team that receives the handoff and takes the POC toward production. | The **ownership line** between MTA Graduate and CTD is a Day 1 topic. |
+| **MTA Graduate** | Programme label for the participant building and defending the POC. Confirm the formal acronym expansion with the lead. | The deck emphasizes code literacy and agent-led work, rather than writing Python from scratch. |
+| **CTD** | Programme label for the team receiving the handoff. Confirm formal responsibilities with the lead. | The **ownership line** between MTA Graduate and CTD is a Day 1 topic. |
 | **POC** | Proof of concept. | The **POC floor** = working data layer + agent + interface. |
 | **Six lenses** | Business, Customer, Code, Risk, Data, Environment. The shared framework for every decision. | Full six-lens mastery is reserved for the Capstone. |
 | **Anchor case** | The AML/KYC use case used across the programme. | Learners are assigned specific use cases within it. |
@@ -69,8 +69,8 @@ Skim this twice before Day 1 and once more at the end of each week. Terms are gr
 |---|---|---|
 | **Context window** | Everything the model can see in one call (instructions, history, documents, tool results). | Bigger is not better; relevance matters. |
 | **Token** | Unit of text the model reads/writes (roughly 3/4 of an English word). | Drives cost and limits. |
-| **Retrieval (RAG)** | Fetch relevant documents ahead of time and add them to context. | |
-| **JIT (just-in-time) search** | The agent fetches information only when it decides it needs it, via tools. | Cheaper, but needs good tools. |
+| **Retrieval / RAG** | Retrieval fetches relevant information; retrieval-augmented generation uses that information when generating an answer. | Retrieval quality and answer quality need separate checks. |
+| **JIT (just-in-time) search** | Fetching information when needed, often through an agent's search tool. | Can use retrieval too; compare measured quality, latency and cost. |
 | **Memory / state** | Information carried across steps or sessions. | Where is it stored? What gets forgotten? |
 | **Compaction** | Summarizing long history to free context. | Can drop critical details. |
 | **File-system context** | Using files as external memory the agent reads and writes. | |
@@ -99,7 +99,7 @@ Skim this twice before Day 1 and once more at the end of each week. Terms are gr
 | **Parallel workers** | Several model calls in parallel on independent subtasks. | |
 | **Multi-agent** | Multiple agents coordinating. | Only when measurably better. |
 | **Autonomy Ladder** | The progression above; climb only with evidence. | |
-| **Input / output / reasoning tokens** | Three billed token types, priced differently. | Output and reasoning usually cost more. |
+| **Input / output / reasoning tokens** | Provider-specific usage categories; reasoning may be included within an output category. | Read the selected model's usage and pricing rules; avoid double-counting. |
 | **Cost-to-serve** | Tokens/request x requests/day x price. | |
 | **Model routing** | Send easy tasks to cheaper models. | |
 | **Cost blowout** | Runaway usage (loops, huge contexts) causing unexpected spend. | Operational risk; add limits and alerts. |
@@ -123,6 +123,29 @@ Skim this twice before Day 1 and once more at the end of each week. Terms are gr
 | **Confidence threshold** | Cutoff below which a human reviews. | |
 | **PII** | Personally identifiable information. | Decide handling at each connection. |
 | **Key Vault** | Azure service for secrets (keys, connection strings). | Never hard-code secrets. |
+| **Tenant / subscription** | Tenant: identity directory. Subscription: Azure resource/billing scope. | Confirm both when diagnosing access. |
+| **Resource group / region** | Resource group organizes Azure resources; region is a deployment location. | Region, quota and service availability can constrain a lab. |
+| **Endpoint / model deployment** | Endpoint: service URL. A deployment identifies a provisioned model on platforms that use deployments. | A public model name is not automatically the correct deployment name. |
+| **Principal / Microsoft Entra ID** | A principal is an identity; Entra ID provides identity and token services. | Authenticate the app's identity, not merely your browser session. |
+| **RBAC / data-plane permission** | Role-based access control assigns scoped permissions; service calls require appropriate service-data access. | Being able to see a resource does not prove you can call it. |
+| **Managed identity** | Azure-managed application identity for supported service-to-service authentication. | Local developer credentials and hosted app identities differ. |
+| **Quota / rate limit** | Quota bounds allocated capacity; rate limits bound request/token throughput. | Bounded retries do not fix missing quota. |
+| **HTTP / JSON** | HTTP carries requests and responses; JSON is a common data format. | Inspect status, body shape and request ID separately. |
+| **Timeout / backoff** | Timeout bounds a wait; backoff spaces retries. | Repeating a write after a timeout requires idempotency. |
+| **Correlation ID** | Identifier connecting a user request with logs and downstream calls. | Trace failures without logging credentials or sensitive documents. |
+| **Long-running operation / poller** | Service starts work and exposes progress/results later. SDK pollers wrap that process. | This is separate from Python's `async` syntax. |
+| **Persistent workflow state** | Saved progress that survives process restart. | An in-memory variable is lost when the app restarts. |
+| **Microsoft Foundry** | Current Microsoft branding for its AI application and agent platform. | Confirm which portal, SDK and resource type the programme uses. |
+
+## Provider and local-model vocabulary
+
+| Term | Meaning | Watch for |
+|---|---|---|
+| **Coding agent vs. application model** | Coding agent edits a repository; the application's model answers requests or proposes tool calls at runtime. | An API chat client alone is not a repository-editing coding agent. |
+| **Tool call vs. MCP** | Tool call: model proposes a function. MCP: protocol connecting applications to tool servers and resources. | The sample's direct functions do not constitute an MCP integration. |
+| **OpenAI-compatible endpoint** | Server implements some OpenAI-shaped requests and responses. | Compatibility can be partial; test tools and response formats separately. |
+| **Local inference / model weights** | Inference runs a downloaded model on your machine using a model server. | Download size, RAM/VRAM, quantization, license and tool support vary. |
+| **Mock / fixture** | Scripted behavior or saved data used for repeatable tests. | A passing mock test does not establish model accuracy or live access. |
 
 ## I. AML/KYC domain
 

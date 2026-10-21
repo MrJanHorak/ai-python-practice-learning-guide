@@ -1,0 +1,42 @@
+{
+  "as_of": "2026-10-21",
+  "rows": 12,
+  "issues_by_csv_line": {
+    "2": [
+      "duplicate_customer_id"
+    ],
+    "3": [
+      "duplicate_customer_id"
+    ],
+    "4": [
+      "missing_legal_name"
+    ],
+    "5": [
+      "invalid_onboarding_date"
+    ],
+    "6": [
+      "invalid_risk_tier"
+    ],
+    "7": [
+      "invalid_country_code_format"
+    ],
+    "8": [
+      "stale_record"
+    ],
+    "9": [
+      "missing_source"
+    ],
+    "10": [
+      "future_onboarding_date"
+    ],
+    "11": [
+      "invalid_demo_email"
+    ],
+    "12": [
+      "invalid_customer_id"
+    ],
+    "13": [
+      "invalid_refresh_date"
+    ]
+  }
+}

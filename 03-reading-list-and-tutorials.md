@@ -1,51 +1,64 @@
 # Reading List and Tutorials
 
 Links are grouped by programme topic, with a suggested priority:
-**[Must]** read before Day 1, **[Should]** read in the first week, **[Later]** reference or depth.
+**[Must]** complete the short preparation route below, **[Should]** use for the relevant lab, **[Later]** reference or depth. Vendor-specific items apply only to your selected tool/provider.
 
-> Verify links before relying on them. Sites reorganize, and Azure product names change often. If a link is dead, search the title.
+> Core provider references checked 21 October 2026. Start with [lesson 06](06-model-provider-lab.md), which includes equivalent examples across providers. Use [lesson 07](07-azure-hands-on-lab.md) for Azure access and deployment practice.
+
+## Short route before Day 1
+
+1. Read [Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents); explain when deterministic code is enough.
+2. Use the [Python tutorial](https://docs.python.org/3/tutorial/) alongside the local scoring example; run the offline tests.
+3. Read [Git worktrees](https://git-scm.com/docs/git-worktree), then create an isolated experiment and inspect its diff.
+4. Run the shared agent and evals from [README](README.md). Inspect one tool trajectory and one denied write.
+5. Complete one [Microsoft Document Intelligence exercise](https://microsoftlearning.github.io/mslearn-ai-document-intelligence/) once sandbox access is ready.
+
+Everything else is just-in-time reading for the upcoming lab. Reserve practice time rather than treating every vendor's documentation as required reading.
 
 ---
 
 ## 1. AI agents and architecture (Autonomy Ladder, Day 6)
 
 - **[Must] Building Effective Agents** (Anthropic Engineering): workflows vs. agents, when to add complexity. https://www.anthropic.com/engineering/building-effective-agents
-- **[Should] Writing effective tools for agents** (Anthropic Engineering): tool design, descriptions, error messages. Search the title on https://www.anthropic.com/engineering
-- **[Later] Anthropic docs, agents and tool use sections:** https://docs.claude.com
+- **[Should] Writing effective tools for agents** (Anthropic Engineering): https://www.anthropic.com/engineering/writing-tools-for-agents ; use it to improve one tool description and rerun evals.
+- **[Later] Native tool protocols and equivalent examples:** [lesson 06](06-model-provider-lab.md), with direct official references for each provider.
 
 ## 2. AI-assisted coding (Day 2)
 
-- **[Must] Claude Code best practices** (Anthropic Engineering): how to direct an agent in a repo. https://www.anthropic.com/engineering/claude-code-best-practices
-- **[Must] Claude Code documentation:** workflows, worktrees, subagents. https://docs.claude.com
+- **[Should, Claude Code] Best practices:** https://code.claude.com/docs/en/best-practices
+- **[Should, OpenAI Codex] Quickstart:** https://developers.openai.com/codex/quickstart/
+- **[Should, Gemini CLI] Getting started:** https://geminicli.com/docs/get-started/
+- **Practice across tools:** use the same executable spec, change scope and tests in [lesson 10](10-project-templates.md). Compare diffs, not just explanations. Coding-agent access/billing is separate from the application's API integration.
 - **[Should] Git worktree docs:** https://git-scm.com/docs/git-worktree
 - **[Should] Pro Git book (free):** branching, merging, rebasing chapters. https://git-scm.com/book
 - **[Later] GitHub Docs, resolving merge conflicts:** https://docs.github.com
 
 ## 3. Specs, PRDs and prompts (Days 2-3)
 
-- **[Must] Anthropic prompt engineering docs:** be clear and direct, use examples, structure with tags. https://docs.claude.com
-- **[Should] Search for "writing a good PRD" from Atlassian or Product School**, then compare to the programme's "pseudocode-level" standard.
-- **[Later] Anthropic docs: defining success criteria:** ties specs to evals. https://docs.claude.com
+- **[Must] Local executable-spec and PRD templates:** [lesson 10](10-project-templates.md). Supply inputs, outputs, constraints, failure cases and tests to any coding agent.
+- **[Should] OpenAI prompt engineering:** https://developers.openai.com/api/docs/guides/prompt-engineering
+- **[Should] Gemini prompting strategies:** https://ai.google.dev/gemini-api/docs/prompting-strategies
+- **[Should] Claude prompting:** https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview
 
 ## 4. Evals (Days 2, 3, 7)
 
 - **[Must] Your AI product needs evals** (Hamel Husain): error analysis, failure categories, practical workflow. https://hamel.dev/blog/posts/evals/
 - **[Should] Eugene Yan on LLM evaluation:** patterns and pitfalls. https://eugeneyan.com
-- **[Should] Anthropic docs: develop test cases / empirical evaluations:** https://docs.claude.com
-- **[Later] Search "LLM-as-a-judge calibration"** for limits of automated graders.
+- **[Should] Apply the local eval template:** [lesson 10](10-project-templates.md), then run and inspect the shared provider evals.
+- **[Later] OpenAI evaluation best practices:** https://developers.openai.com/api/docs/guides/evaluation-best-practices ; compare automated scores with your own labels before trusting a judge.
 
 ## 5. Context engineering (Day 4)
 
 - **[Must] Effective context engineering for AI agents** (Anthropic Engineering): the core Day 4 article. https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
-- **[Should] Anthropic docs on context windows, prompt caching, token counting:** https://docs.claude.com
-- **[Later] Search "retrieval augmented generation vs agentic search"** for the retrieval-vs-JIT debate (Block 3 depth).
+- **[Should] Compare actual per-call usage metadata:** [lesson 06](06-model-provider-lab.md). Follow the selected provider's current context/cache limits and pricing rules.
+- **[Should] Local retrieval exercise:** [lesson 08](08-project-workbook.md), including obsolete-policy exclusion and unsupported-answer checks. Compare retrieval and answer failures separately.
 
 ## 6. Tools and MCP (Day 5)
 
 - **[Must] Model Context Protocol, introduction and concepts:** https://modelcontextprotocol.io
 - **[Must] MCP Python SDK on GitHub:** README and examples. https://github.com/modelcontextprotocol/python-sdk
-- **[Should] Anthropic docs, tool use overview:** https://docs.claude.com
-- **[Later] Search "idempotency keys API design"** (Stripe's API docs explain it well): https://docs.stripe.com
+- **[Should] Provider tool references and runnable examples:** [lesson 06](06-model-provider-lab.md).
+- **[Later] Stripe idempotent requests:** https://docs.stripe.com/api/idempotent_requests ; compare with the local SQLite retry exercise.
 
 ## 7. Python
 
@@ -63,36 +76,38 @@ Links are grouped by programme topic, with a suggested priority:
 - **[Must] Document Intelligence Studio:** upload a sample PDF and inspect output and confidence. https://documentintelligence.ai.azure.com
 - **[Should] Azure Container Apps overview:** https://learn.microsoft.com/azure/container-apps/overview
 - **[Should] Azure Key Vault overview:** https://learn.microsoft.com/azure/key-vault/general/overview
-- **[Should] Microsoft Learn, search "Azure AI Foundry" or "Azure OpenAI"** for model hosting, whichever the programme uses (ask the lead).
+- **[Should] Microsoft Foundry documentation:** https://learn.microsoft.com/en-us/azure/foundry/ ; confirm the actual resource, model deployment and SDK with the lead.
+- **[Should] Python authentication:** https://learn.microsoft.com/en-us/azure/developer/python/sdk/authentication/overview ; explain how local and deployed identities differ.
+- **[Should] Microsoft agent labs:** https://microsoftlearning.github.io/mslearn-ai-agents/ ; select the basic agent, function and MCP exercises if this matches the programme stack.
 - **[Later] Azure pricing calculator:** https://azure.microsoft.com/pricing/calculator
-- **[Later] Microsoft Learn learning paths for AI-900 and AI-102:** https://learn.microsoft.com/credentials
+- **[Later] Current study maps:** [AI-901](https://learn.microsoft.com/en-us/credentials/certifications/exams/ai-901/) and [AI-103](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/AI-103). Use selected topics rather than making certification a prerequisite.
 
 ## 9. Risk, responsible AI and governance (Day 8)
 
 - **[Should] Anthropic Responsible Scaling and usage policies** (for general framing): https://www.anthropic.com
-- **[Should] Microsoft Responsible AI Standard overview:** search the title on https://www.microsoft.com/ai/responsible-ai
+- **[Must] Obtain the programme's internal risk checklist, approved examples and assessment rubric.** Public frameworks provide context; use the actual internal standards for review.
+- **[Should] Microsoft responsible AI resources:** https://www.microsoft.com/en-us/ai/responsible-ai
 - **[Later] NIST AI Risk Management Framework:** https://www.nist.gov/itl/ai-risk-management-framework
 
 ## 10. AML/KYC domain
 
 - **[Must] FATF, "What is money laundering" and risk-based approach pages:** https://www.fatf-gafi.org
 - **[Should] FinCEN, CDD rule and SAR overview (US):** https://www.fincen.gov
-- **[Should] Search "KYC onboarding process steps"** from a major bank or vendor for a practical walk-through.
+- **[Should] Map the programme's assigned onboarding workflow:** identify the owner, required evidence and escalation at each step. The local fictional invoice project does not establish regulatory requirements.
 - **[Later] Wolfsberg Group guidance:** https://www.wolfsberg-group.org
 
 ## 11. Presentation and handoff (Day 10)
 
-- **[Should] Search "architecture decision record (ADR)"**: a model for defending decisions.
-- **[Later] Search "runbook template"** for what CTD will expect in a handoff.
+- **[Should] Architecture, handoff and runbook templates:** [lesson 10](10-project-templates.md). Defend one architecture choice using measured results.
 
 ---
 
-## Suggested reading order (about 10 hours)
+## Additional topic blocks (optional, about 10 hours total)
 
 | Block | Items | Time |
 |---|---|---|
 | 1 | Building Effective Agents; Context engineering article | 1 hr |
-| 2 | Claude Code best practices; Git worktree docs | 1 hr |
+| 2 | Your chosen coding agent's practices; Git worktree docs | 1 hr |
 | 3 | Hamel Husain evals article; Anthropic test-case docs | 1.5 hrs |
 | 4 | MCP intro; build the tiny MCP server from the cheat sheet | 2 hrs |
 | 5 | Python tutorial skim; pytest get-started; Pydantic basics | 2 hrs |
@@ -104,3 +119,8 @@ Links are grouped by programme topic, with a suggested priority:
 - Anthropic Engineering blog: https://www.anthropic.com/engineering
 - Latent Space (AI engineering podcast/newsletter): https://www.latent.space
 - Simon Willison's blog (practical LLM tooling): https://simonwillison.net
+
+## Local model reference
+
+- [Ollama tool calling](https://docs.ollama.com/capabilities/tool-calling): run the same customer lookup with a downloaded tool-capable model.
+- [Ollama OpenAI compatibility](https://docs.ollama.com/api/openai-compatibility): compare native `/api/chat` with `/v1/chat/completions`; test feature support instead of assuming full compatibility.

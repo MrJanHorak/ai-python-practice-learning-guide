@@ -1,0 +1,84 @@
+[
+  {
+    "document_id": "D-001",
+    "status": "validated",
+    "reasons": []
+  },
+  {
+    "document_id": "D-002",
+    "status": "review",
+    "reasons": [
+      "missing_total_amount",
+      "invalid_total_amount"
+    ]
+  },
+  {
+    "document_id": "D-003",
+    "status": "review",
+    "reasons": [
+      "supplier_name_mismatch"
+    ]
+  },
+  {
+    "document_id": "D-004",
+    "status": "review",
+    "reasons": [
+      "future_invoice_date"
+    ]
+  },
+  {
+    "document_id": "D-005",
+    "status": "review",
+    "reasons": [
+      "invalid_invoice_date"
+    ]
+  },
+  {
+    "document_id": "D-006",
+    "status": "review",
+    "reasons": [
+      "invalid_total_amount"
+    ]
+  },
+  {
+    "document_id": "D-007",
+    "status": "review",
+    "reasons": [
+      "unsupported_currency"
+    ]
+  },
+  {
+    "document_id": "D-008",
+    "status": "review",
+    "reasons": [
+      "unknown_customer"
+    ]
+  },
+  {
+    "document_id": "D-009",
+    "status": "validated",
+    "reasons": []
+  },
+  {
+    "document_id": "D-010",
+    "status": "review",
+    "reasons": [
+      "missing_supplier_name",
+      "supplier_name_mismatch"
+    ]
+  },
+  {
+    "document_id": "D-011",
+    "status": "review",
+    "reasons": [
+      "low_confidence:total_amount"
+    ]
+  },
+  {
+    "document_id": "D-012",
+    "status": "review",
+    "reasons": [
+      "missing_confidence:invoice_id"
+    ]
+  }
+]

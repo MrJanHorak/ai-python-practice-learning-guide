@@ -1,0 +1,26 @@
+[
+  {
+    "source_id": "POL-REVIEW-v2",
+    "file": "review-v2.md",
+    "version": "2",
+    "status": "active"
+  },
+  {
+    "source_id": "POL-WORKFLOW-v1",
+    "file": "workflow-v1.md",
+    "version": "1",
+    "status": "active"
+  },
+  {
+    "source_id": "POL-DATA-v1",
+    "file": "data-v1.md",
+    "version": "1",
+    "status": "active"
+  },
+  {
+    "source_id": "POL-REVIEW-v1",
+    "file": "review-v1-obsolete.md",
+    "version": "1",
+    "status": "obsolete"
+  }
+]

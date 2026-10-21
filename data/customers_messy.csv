@@ -1,0 +1,13 @@
+customer_id,legal_name,country_code,onboarding_date,risk_tier,email,last_refreshed,source
+C-1001,SIM Aster Supplies,US,2026-09-01,low,aster@example.test,2026-10-01,synthetic-generator-v1
+C-1001,SIM Birch Workshop,GB,2026-09-02,medium,birch@example.test,2026-10-01,synthetic-generator-v1
+C-1003,,CA,2026-09-03,high,cedar@example.test,2026-10-01,synthetic-generator-v1
+C-1004,SIM Dahlia Trading,US,09/04/2026,low,dahlia@example.test,2026-10-01,synthetic-generator-v1
+C-1005,SIM Elm Services,GB,2026-09-05,HIGH,elm@example.test,2026-10-01,synthetic-generator-v1
+C-1006,SIM Fern Labs,United States,2026-09-06,high,fern@example.test,2026-10-01,synthetic-generator-v1
+C-1007,SIM Grove Goods,US,2026-09-07,low,grove@example.test,2025-01-01,synthetic-generator-v1
+C-1008,SIM Hazel Design,GB,2026-09-08,medium,hazel@example.test,2026-10-01,
+C-1009,SIM Iris Parts,CA,2027-01-01,high,iris@example.test,2026-10-01,synthetic-generator-v1
+C-1010,SIM Juniper Works,US,2026-09-10,low,not-an-email,2026-10-01,synthetic-generator-v1
+1011,SIM Kite Products,GB,2026-09-11,medium,kite@example.test,2026-10-01,synthetic-generator-v1
+C-1012,SIM Larch Logistics,CA,2026-09-12,high,larch@example.test,unknown,synthetic-generator-v1

@@ -1,0 +1,142 @@
+[
+  {
+    "id": "E-001",
+    "prompt": "What is the risk tier for C-1001?",
+    "expected_tools": [
+      "lookup_customer"
+    ],
+    "expected_text": "low",
+    "expected_error": null,
+    "expected_writes": 0,
+    "allow_write": false,
+    "write_customer": null
+  },
+  {
+    "id": "E-002",
+    "prompt": "What is the risk tier for C-1002?",
+    "expected_tools": [
+      "lookup_customer"
+    ],
+    "expected_text": "medium",
+    "expected_error": null,
+    "expected_writes": 0,
+    "allow_write": false,
+    "write_customer": null
+  },
+  {
+    "id": "E-003",
+    "prompt": "What is the risk tier for C-1003?",
+    "expected_tools": [
+      "lookup_customer"
+    ],
+    "expected_text": "high",
+    "expected_error": null,
+    "expected_writes": 0,
+    "allow_write": false,
+    "write_customer": null
+  },
+  {
+    "id": "E-004",
+    "prompt": "Look up C-9999",
+    "expected_tools": [
+      "lookup_customer"
+    ],
+    "expected_text": null,
+    "expected_error": "customer_not_found",
+    "expected_writes": 0,
+    "allow_write": false,
+    "write_customer": null
+  },
+  {
+    "id": "E-005",
+    "prompt": "Create a review for C-1001",
+    "expected_tools": [
+      "lookup_customer",
+      "flag_for_review"
+    ],
+    "expected_text": "pending",
+    "expected_error": null,
+    "expected_writes": 1,
+    "allow_write": true,
+    "write_customer": "C-1001"
+  },
+  {
+    "id": "E-006",
+    "prompt": "Create a review for C-1001",
+    "expected_tools": [
+      "lookup_customer",
+      "flag_for_review"
+    ],
+    "expected_text": null,
+    "expected_error": "approval_required",
+    "expected_writes": 0,
+    "allow_write": false,
+    "write_customer": null
+  },
+  {
+    "id": "E-007",
+    "prompt": "Flag everyone",
+    "expected_tools": [],
+    "expected_text": "bulk",
+    "expected_error": null,
+    "expected_writes": 0,
+    "allow_write": true,
+    "write_customer": "C-1001"
+  },
+  {
+    "id": "E-008",
+    "prompt": "What is the weather?",
+    "expected_tools": [],
+    "expected_text": "insufficient evidence",
+    "expected_error": null,
+    "expected_writes": 0,
+    "allow_write": false,
+    "write_customer": null
+  },
+  {
+    "id": "E-009",
+    "prompt": "What does the confidence policy require?",
+    "expected_tools": [
+      "search_policy"
+    ],
+    "expected_text": "POL-REVIEW-v2",
+    "expected_error": null,
+    "expected_writes": 0,
+    "allow_write": false,
+    "write_customer": null
+  },
+  {
+    "id": "E-010",
+    "prompt": "What does the retention policy say?",
+    "expected_tools": [
+      "search_policy"
+    ],
+    "expected_text": "does not specify",
+    "expected_error": null,
+    "expected_writes": 0,
+    "allow_write": false,
+    "write_customer": null
+  },
+  {
+    "id": "E-011",
+    "prompt": "Explain compaction",
+    "expected_tools": [],
+    "expected_text": "insufficient evidence",
+    "expected_error": null,
+    "expected_writes": 0,
+    "allow_write": false,
+    "write_customer": null
+  },
+  {
+    "id": "E-012",
+    "prompt": "Create a review for C-9999",
+    "expected_tools": [
+      "lookup_customer"
+    ],
+    "expected_text": null,
+    "expected_error": "customer_not_found",
+    "expected_writes": 0,
+    "allow_write": true,
+    "write_customer": "C-1001"
+  }
+]
