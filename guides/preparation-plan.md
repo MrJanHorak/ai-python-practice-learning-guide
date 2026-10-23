@@ -1,25 +1,26 @@
 # Prep Plan and Exercises
 
-A hands-on plan that mirrors your project's arc. Start at [README](README.md), use the supplied synthetic data, and complete [the project workbook](08-project-workbook.md). The actual lab stack and internal rubrics still need confirmation from the lead.
+A hands-on plan that mirrors your project's arc. Start at [README](../README.md), use the supplied synthetic data, and complete [the project workbook](../lessons/14-project-workbook.md). The actual lab stack and internal rubrics still need confirmation from the lead.
 
 ---
 
-## Orientation weekend (about 8 hours, excluding access/setup delays)
+## A beginner preparation sequence
 
-1. **Agent-driven coding (2.5 hrs):** Exercise A.
-2. **Python reading and pytest (1.5 hrs):** Exercise B.
-3. **Mini agent with a tool plus 10 evals (2.5 hrs):** Exercises C and D.
-4. **Azure Document Intelligence on a sample PDF (1 hr):** Exercise F.
-5. **Glossary skim and running-example overview (0.5 hr).**
+1. **Understand one request:** foundations, Python and pytest (lessons 01–03). Explain a function and a failed assertion before delegating a change.
+2. **Read the inputs:** configuration/replay and scope/data (04–05). Profile the linked tables and write the four-line scope.
+3. **Choose the right evidence:** context/search (06). Find the right policy version locally before trying Azure Search.
+4. **Connect real tools:** MCP/integration tests (07). List tools, inspect an error and prove one write survives a retry without duplication.
+5. **Measure and explain:** evaluation (08), then the reliability cost exercise (12). Distinguish authored/replay/live results and preserve unverified gaps.
+6. **Add live services when ready:** provider comparison (09), Azure (10), oversight (11) and document pipelines (13). Finish the workbook (14) and rehearse mentoring with the course companion.
 
-This is an introduction, not evidence of readiness to troubleshoot the full learning path. Add the data, integration, failure-rehearsal and extension sessions tasks below. Use one model provider first; then repeat the same task using the others through [lesson 06](06-model-provider-lab.md).
+Allow several sessions; installation and new concepts can take longer than running the commands. Use [the course companion](course-companion.md) for the day-by-day bridge and [the glossary](glossary.md) whenever a word is unfamiliar. Complete the local path before spending time on unavailable services. Use one live model provider first, then compare through [the provider lesson](../lessons/09-model-providers.md).
 
 ## Exercise 0: Data readiness
 
 1. Inspect `data/customers_messy.csv` before opening the answer key.
 2. Record duplicates, missing fields, invalid formats, stale rows and unclear provenance.
 3. Run `python -m examples.ai_systems profile` and compare with your own findings.
-4. Write a data readiness note using [lesson 10](10-project-templates.md), naming the owner and whether each gap blocks the build.
+4. Write a data readiness note using [Templates guide](project-templates.md), naming the owner and whether each gap blocks the build.
 5. Compare with `data/customers_clean.csv`. The profiler is a baseline, not an exhaustive quality checker.
 
 ---
@@ -39,7 +40,7 @@ This is an introduction, not evidence of readiness to troubleshoot the full lear
 
 ## Exercise B: Python reading and pytest
 
-1. Read the cheat sheet (file 02) sections 1-5, then complete [the pytest tutorial](14-pytest-tutorial.md).
+1. Read the Python lesson sections 1-5, then complete [the pytest tutorial](../lessons/03-pytest.md).
 2. Run `python -m pytest tutorials/pytest -v` and explain a plain assertion, a parametrized case and `pytest.raises`.
 3. Use fixtures and `tmp_path` to test retries and a denied write without touching your normal database.
 4. Inspect the fake model transport and network guard. Explain which behavior they verify and what still needs a live test.
@@ -75,7 +76,7 @@ The supplied twelve cases are starter checks. The mock is scripted and is not an
 
 ## Exercise F: Azure Document Intelligence
 
-1. Follow [lesson 07](07-azure-hands-on-lab.md) in the learning path sandbox, or a suitable personal subscription after checking permissions and cost.
+1. Follow [Azure guide](../lessons/10-azure.md) in the learning path sandbox, or a suitable personal subscription after checking permissions and cost.
 2. Use the three supplied synthetic PDFs in `data/documents/`: clean invoice, missing identifier and injected instructions. Render/scan a copy if you want to compare OCR quality; these initial PDFs are native text.
 3. Run the Python extraction command, inspect raw output and normalize it into the lab contract.
 4. Compare actual fields with `data/document_manifest.json`. The hand-authored JSON confidence fixtures are not captured Azure outputs.
@@ -96,7 +97,7 @@ The supplied twelve cases are starter checks. The mock is scripted and is not an
 3. Write the **model / software / human** ownership split in one table.
 4. Write a one-page handoff brief: purpose, architecture, evals, known gaps, run instructions, cost, risks.
 
-Also map the human workflow before and after the change: reviewer, evidence, approval/rejection, exceptions and owner. Use [the templates](10-project-templates.md).
+Also map the human workflow before and after the change: reviewer, evidence, approval/rejection, exceptions and owner. Use [the templates](project-templates.md).
 
 ## Exercise I: Interface and persistent state
 
@@ -107,7 +108,7 @@ Also map the human workflow before and after the change: reviewer, evidence, app
 
 ## Exercise J: Deployment and recovery
 
-1. Complete [the Azure lab](07-azure-hands-on-lab.md), including identity and endpoint diagnosis.
+1. Complete [the Azure lab](../lessons/10-azure.md), including identity and endpoint diagnosis.
 2. Deploy only to an approved host and record the deployment choice and alternatives.
 3. Inspect useful logs, request IDs, latency, token usage and costs. Exclude credentials and sensitive fields.
 4. Inject a timeout, wrong configuration or denied permission; identify the first diagnostic check and an escalation route.

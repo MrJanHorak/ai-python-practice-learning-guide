@@ -1,4 +1,4 @@
-# Lesson 07: Azure from access to extraction and deployment
+# 10: Azure from access to extraction and deployment
 
 Goal: explain the identity, endpoint, data contract and failure at every boundary. Start with your project's approved sandbox. Azure account access, allowed regions, quotas, service features and pricing depend on your organisation and subscription; confirm them before provisioning anything. The instructions below do not create resources automatically.
 
@@ -111,6 +111,14 @@ Evidence to capture:
 
 A cost budget alerts you; it does not automatically stop resources or consumption. Bound application loops and service use, and explicitly clean up practice resources you own. See [Microsoft's budget documentation](https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets).
 
-## 8. Check your understanding
+## Azure Search is a separate service exercise
+
+Document Intelligence extracts fields from pages. Azure AI Search retrieves indexed documents using text and filters. Azure-hosted language models generate outputs. A key or permission for one is not permission for another.
+
+Complete [the context and Azure Search tutorial](06-context-and-search.md) for a runnable optional indexing/query exercise. Its local baseline requires no Azure access; the live commands require an existing approved service. Record endpoint/index, caller identity or key type, scope filters, matching policy IDs and failure evidence. Keep indexing credentials out of runtime tool calls and model context.
+
+Then use [document pipelines and privacy](13-document-pipelines-and-privacy.md) to extend extraction design beyond the invoice example. Do not interpret either exercise's successful service response as onboarding approval.
+
+## Check your understanding
 
 Explain: why local access can work while a hosted call fails; why a portal role may not allow inference; why a service poller differs from `async`; why an endpoint and deployment name are different; why a valid extraction is not onboarding approval; and what happens after a timeout and restart.

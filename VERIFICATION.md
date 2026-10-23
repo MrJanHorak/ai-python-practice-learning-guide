@@ -1,6 +1,27 @@
 # Verification record
 
-Date: 21 October 2026.
+Latest extension verification: **23 October 2026**. Earlier results below are retained as historical checks.
+
+## Course preparation extension: executed 23 October
+
+- Reorganised the fifteen root-level learning/reference Markdown files into numbered `lessons/` and unnumbered `guides/`; updated maintained local links. The root README remains the entry point.
+- Added six beginner lessons, a Days 1–12 course companion, expanded glossary, and extensions to evaluation, Azure, reliability, mentoring, templates and the workbook. Source links are in the companion. Google Drive material was read, not modified.
+- Created the independent fictional linked-review fixtures: 6 applications, 18 parties, 16 documents, 18 screening rows and 5 policy versions. Recording text and token counts are authored, not captured live responses.
+- Installed optional exercise dependencies into the separate ignored `.venv-learning` environment: Python **3.12.14**, pytest **9.1.1**, PyYAML **6.0.3**, MCP **1.30.0**, Pydantic **2.14.1**. Ranges in `requirements-learning.txt` are not a full dependency lockfile.
+- `python -m pytest tests tutorials -q`: **56 passed, 18 subtests passed**. The MCP integration checks ran with real local stdio server processes and temporary SQLite databases. They verified listing/schema errors, not-found handling, denied writes, persistence across restart and repeated-write deduplication. The Windows sandbox blocked the subprocess exchange; the successful full run used an approved execution outside that sandbox.
+- Replay tests verified actual local tool calls through a spy, all-party screening, policy scope/date, minimisation, must-keep questions, unsupported variants, fixture-byte mismatch rejection, bounded search failures and lost replies after committed writes.
+- `python scripts/check_learning_material.py`: **30 Markdown files, 154 local links, 21 Python blocks and 31 Python files; zero errors**. This checks syntax and relative file existence, not external URL availability or semantic completeness.
+- CLI checks: five practice replay cases matched authored status/pending/review-count expectations; per-call cost arithmetic reported total 0.008 at invented rates; original scripted provider evals remained **12/12**.
+- `git diff --check` passed. The maintained lessons/guides were checked for the removed company and role labels and stale root filenames.
+
+## Extension limitations
+
+- No live model, local inference server, Azure Search, Azure Document Intelligence, Azure OpenAI or hosted deployment was invoked. The optional new Azure Search script was syntax-checked; its SDK integration and permissions remain unverified live.
+- The small replay runner uses a fixed trajectory plus real local tools. It is not a model choosing actions, a replacement for the supplied course harness, or a full implementation of its hard rules and minimum POC criteria.
+- Visible answer keys and regression tests make the practice/holdout split educational, not a blind benchmark. Dataset/suite/build fingerprints cover selected inputs, not an attestation of the whole environment.
+- The original interface was not started. Its renamed troubleshooting reference was updated; new document/interface material includes design exercises where runnable functionality is not provided.
+
+## Historical verification: 21 October 2026
 
 ## Executed successfully
 

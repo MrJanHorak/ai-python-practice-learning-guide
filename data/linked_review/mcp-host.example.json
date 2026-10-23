@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "learning-review-tools": {
+      "command": "REPLACE_WITH_ABSOLUTE_PYTHON_EXECUTABLE",
+      "args": ["-m", "examples.learning_lab.mcp_server"]
+    }
+  }
+}

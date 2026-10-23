@@ -1,0 +1,17 @@
+document_id,party_id,doc_type,document_date,expiry_date,private_note
+PRACTICE-DOC-10,PRACTICE-PARTY-10,registration,2025-01-01,2027-01-01,Invented private detail: exclude from context and logs
+PRACTICE-DOC-11,PRACTICE-PARTY-11,identity,2025-01-01,2027-01-01,Invented private detail: exclude from context and logs
+PRACTICE-DOC-12,PRACTICE-PARTY-12,identity,2025-01-01,2027-01-01,Invented private detail: exclude from context and logs
+PRACTICE-DOC-20,PRACTICE-PARTY-20,registration,2025-01-01,2027-01-01,Invented private detail: exclude from context and logs
+PRACTICE-DOC-21,PRACTICE-PARTY-21,identity,2025-01-01,2027-01-01,Invented private detail: exclude from context and logs
+PRACTICE-DOC-22,PRACTICE-PARTY-22,identity,2025-01-01,2027-01-01,Invented private detail: exclude from context and logs
+PRACTICE-DOC-30,PRACTICE-PARTY-30,registration,2025-01-01,2027-01-01,Invented private detail: exclude from context and logs
+PRACTICE-DOC-32,PRACTICE-PARTY-32,identity,2025-01-01,2027-01-01,Invented private detail: exclude from context and logs
+PRACTICE-DOC-40,PRACTICE-PARTY-40,registration,2025-01-01,2027-01-01,Invented private detail: exclude from context and logs
+PRACTICE-DOC-41,PRACTICE-PARTY-41,identity,2025-01-01,2027-01-01,Invented private detail: exclude from context and logs
+PRACTICE-DOC-42,PRACTICE-PARTY-42,identity,2025-01-01,2027-01-01,Invented private detail: exclude from context and logs
+PRACTICE-DOC-50,PRACTICE-PARTY-50,registration,2025-01-01,2027-01-01,Invented private detail: exclude from context and logs
+PRACTICE-DOC-51,PRACTICE-PARTY-51,identity,2025-01-01,2026-01-01,Invented private detail: exclude from context and logs
+PRACTICE-DOC-52,PRACTICE-PARTY-52,identity,2025-01-01,2027-01-01,Invented private detail: exclude from context and logs
+PRACTICE-DOC-60,PRACTICE-PARTY-60,registration,2025-01-01,2027-01-01,Invented private detail: exclude from context and logs
+PRACTICE-DOC-62,PRACTICE-PARTY-62,identity,2025-01-01,2027-01-01,Invented private detail: exclude from context and logs

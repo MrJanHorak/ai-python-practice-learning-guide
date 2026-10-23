@@ -66,7 +66,7 @@ def post_json(url, payload, headers, timeout=45):
 def required_env(name):
     value = os.environ.get(name, "").strip()
     if not value:
-        raise ProviderError(f"Set {name} in this process first; see .env.example and lesson 06.")
+        raise ProviderError(f"Set {name} in this process first; see .env.example and lessons/09-model-providers.md.")
     return value
 
 

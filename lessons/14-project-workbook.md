@@ -1,4 +1,4 @@
-# Lesson 08: eight sessions to build and teach the project
+# 14: Project workbook — eight sessions to build and teach
 
 Allow roughly 90-120 minutes per session plus environment/access delays. Adapt these estimates to your starting point. Use the completion checks for self-review or a conversation with a mentor. Use Python 3.10+ from the repository root.
 
@@ -8,13 +8,13 @@ Allow roughly 90-120 minutes per session plus environment/access delays. Adapt t
 2. Write a small brief: who uses the onboarding review assistant, what it helps them do, and which decisions remain human.
 3. Profile the data with `python -m examples.ai_systems profile` and inspect `core.py`.
 4. Compare your findings with `data/answers/profile_expected.json` and explain which issues the profiler cannot detect.
-5. Write the data readiness note from lesson 10; assign owners and blocking/nonblocking status.
+5. Write the [data readiness note](../guides/project-templates.md); assign owners and blocking/nonblocking status.
 
 Expected: twelve rows with intentional defects, including the duplicate ID on two lines. The clean dataset should have no issues under this narrow checker. All freshness comparisons default to 2026-10-21 for reproducibility; use `--as-of YYYY-MM-DD` for another date.
 
 ## Session 2: Python, tests and precise changes
 
-If pytest is new to you, complete [lesson 14](14-pytest-tutorial.md) first. Its runnable examples cover the test techniques used in this session.
+If pytest is new to you, complete [pytest guide](03-pytest.md) first. Its runnable examples cover the test techniques used in this session.
 
 ```powershell
 python -m unittest discover -s tests -v
@@ -32,7 +32,7 @@ python -m examples.ai_systems agent --provider mock --prompt "Look up C-9999"
 python -m examples.ai_systems agent --provider mock --prompt "Create a review for C-1001"
 ```
 
-Trace model proposal, application validation, tool result and final response. The last command should show `approval_required` and create no review. Configure one real provider through lesson 06 and repeat. Inspect its behavior rather than expecting the mock's exact wording.
+Trace model proposal, application validation, tool result and final response. The last command should show `approval_required` and create no review. Configure one real provider through Providers guide and repeat. Inspect its behavior rather than expecting the mock's exact wording.
 
 Completion check: explain how provider-specific messages connect the original call and its result, and where permission checks actually execute.
 
@@ -59,7 +59,7 @@ python -m examples.ai_systems validate --threshold 0.9
 
 Inspect all twelve saved extractions before reading their expected labels. With the default threshold, two fixtures validate and ten require review. D-009's malicious note does not alter deterministic field validation; it still needs a separate agent injection test if used in model context.
 
-Complete the live extraction in lesson 07 using the clean, missing-number and injection PDFs. Map the raw result to the application contract and explain each field and confidence value. Add a rendered/scanned version of a synthetic invoice if you want to investigate OCR separately.
+Complete the live extraction in Azure guide using the clean, missing-number and injection PDFs. Map the raw result to the application contract and explain each field and confidence value. Add a rendered/scanned version of a synthetic invoice if you want to investigate OCR separately.
 
 Completion check: distinguish raw service output, normalized extraction, deterministic validation, agent explanation and human decision.
 
@@ -87,14 +87,26 @@ Use the questions in `data/answers/retrieval_questions.json` as evaluator-only l
 
 Check whether the right source was retrieved, whether the answer is supported, whether the citation names the right version, and whether missing evidence is acknowledged. Exclude the obsolete 0.70 policy. The corpus does not define a document-retention duration.
 
-Repeat the same lookup/review questions across Anthropic, OpenAI, Gemini and a suitable local model as access permits. Track exact model/version, latency, usage, state and failure types using lesson 10's comparison table. You can prepare the lab using mock even if all cloud providers are not available yet.
+Repeat the same lookup/review questions across Anthropic, OpenAI, Gemini and a suitable local model as access permits. Track exact model/version, latency, usage, state and failure types using [the comparison template](../guides/project-templates.md). You can prepare the lab using mock even if all cloud providers are not available yet.
 
 Completion check: explain a measured difference without confusing model ability, API compatibility, account configuration or hardware limitations.
 
 ## Session 8: deployment plan, handoff and mock lab
 
-Prepare the deployment plan from lesson 07 and templates from lesson 10. Include a cost model for multiple calls per request, retries, document extraction, retrieval, hosting and logs. Label assumed rates and volumes. Make the human workflow before/after visible.
+Prepare the deployment plan from [the Azure lesson](10-azure.md) and [project templates](../guides/project-templates.md). Include a cost model for multiple calls per request, retries, document extraction, retrieval, hosting and logs. Label assumed rates and volumes. Make the human workflow before/after visible.
 
-Rehearse a five-minute technical explanation and a two-minute nontechnical explanation. Select one intentionally broken configuration from lesson 09, give it to a partner and coach them through recovery. Compare your evidence with the agreed project criteria and identify remaining gaps.
+Rehearse a five-minute technical explanation and a two-minute nontechnical explanation. Select one intentionally broken configuration from [the Mentor playbook](../guides/mentor-playbook.md), give it to a partner and coach them through recovery. Compare your evidence with the agreed project criteria and identify remaining gaps.
 
 Completion check: demonstrate the working data + agent + interface, eval results, risk/ownership decisions, deployment plan and handoff brief. Extend the project by integrating extraction, orchestration and knowledge support, then apply the patterns to another domain.
+
+## Course preparation extension: connect the newer lessons
+
+The eight sessions above use the original invoice/provider project. For the linked-record course patterns, complete these additional sessions without mixing datasets:
+
+1. **Scope/data/configuration:** lessons 04–05. Profile `data/linked_review/`, read the YAML example and write scope plus open questions with owners. Completion: explain one join and one coverage gap.
+2. **Context/search:** lesson 06. Retrieve the current scoped policy, minimise document fields and test must-keep state. Completion: wrong-jurisdiction and stale-policy tests fail when filters are deliberately broken. Azure is optional.
+3. **MCP and failures:** lesson 07. Run the server/client tests, inspect a schema error, a denied write and a timeout after commit. Completion: show actual tool calls and unchanged/one-row state as appropriate.
+4. **Evaluation/oversight:** lessons 08 and 11. Write independent expected behavior, compare matching suite versions and record attack attempts. Completion: separate hard-rule evidence, ordinary quality scores and unverified conditions.
+5. **Operations/documents/handoff:** lessons 12–13 and the templates. Explain per-case cost, a monitoring action, repeated document groups and privacy at each boundary. Completion: another learner can reproduce your evidence and name its limitations.
+
+Use [the course companion](../guides/course-companion.md) to rehearse the actual day's starter, allowed edit scope and baseline counts. The practice runner has no interface; the original Streamlit interface is a separate teaching example, not the supplied course UI.

@@ -1,4 +1,4 @@
-# Lesson 12: measure behavior and learn from errors
+# 08: Measure behavior and learn from errors
 
 Learning outcome: design a small experiment that distinguishes useful performance from a demo that happened to work. Start with an expected outcome that was chosen independently of the implementation.
 
@@ -11,7 +11,7 @@ Learning outcome: design a small experiment that distinguishes useful performanc
 | Model/system eval | Does the configured model/application perform representative tasks? | Correct lookup, grounded answer, safe state change and recovery |
 | Usability observation | Can a person understand and complete the workflow? | Reviewer finds the evidence and handles an exception |
 
-A fake network response makes tests repeatable. It cannot establish real model quality or endpoint compatibility. A live answer that looks correct cannot establish idempotency. Combine checks that target the different boundaries. [The pytest tutorial](14-pytest-tutorial.md) covers the deterministic layers.
+A fake network response makes tests repeatable. It cannot establish real model quality or endpoint compatibility. A live answer that looks correct cannot establish idempotency. Combine checks that target the different boundaries. [The pytest tutorial](03-pytest.md) covers the deterministic layers.
 
 ## 2. Define outcomes and baselines first
 
@@ -64,7 +64,32 @@ An LLM judge is another fallible grader. Compare its judgments with human labels
 
 ## A small evidence report
 
-Use the template in lesson 10. Include objective, baseline, cases and split, code/model/settings, rubric, results, worst failures, changes, repeated-run variation, cost/latency and unresolved limitations. Explain which findings come from deterministic tests, scripted fixtures or live models.
+Use the [evaluation template](../guides/project-templates.md). Include objective, baseline, cases and split, code/model/settings, rubric, results, worst failures, changes, repeated-run variation, cost/latency and unresolved limitations. Explain which findings come from deterministic tests, scripted fixtures or live models.
+
+## Course-style evaluation workshop
+
+Start with the five practice cases: `python -m examples.learning_lab eval --split practice`. The runner prints JSONL with final status, tool events, review count and fingerprints. It checks only status, pending convention and review count. A passing row is not evidence that every hard rule was tested.
+
+Extend the evaluator with independently authored requirements in these layers:
+
+| Layer | Example check |
+|---|---|
+| Final answer | No unsupported approval or policy citation |
+| Tool selection | Required tools called; forbidden tools absent |
+| Arguments | Company, jurisdiction and date match the retrieved application |
+| Trajectory | Every party screened; required calls happen before consequential writes; retries bounded |
+| State | Exactly one review exists, with correct reasons; source application unchanged |
+| Recovery | Unavailable data remains visible and does not create a recommendation |
+
+Write a requirement ID, input, expected result and source for each new case. Classify observed failures as code, data, specification or unresolved ambiguity, citing the evidence. Keep a severity table separate from the failure category. Grade hard-rule checks individually before an aggregate score. `replay_missing` is an unexecuted scenario, not a pass.
+
+If given messy evaluation data, inspect duplicate IDs, missing labels, invalid types, contradictory expected outcomes and unknown origins. Fix the evaluator data with a documented reason, preserve the original baseline, and version the corrected suite; do not quietly relabel failures to match the current implementation.
+
+For a regression comparison, dataset and suite fingerprints must match. Record build, context variant, faults and actual dependencies too. Demonstrate one improvement and one unchanged control. The supplied runner fingerprints selected files, not the complete execution environment. After choosing changes, run `python -m examples.learning_lab eval --split holdout` once. If you use that result to tune, create a fresh holdout before claiming independent validation.
+
+Continue with [MCP test examples](07-mcp-and-integration-tests.md) for spies and state checks, [oversight](11-oversight-permissions-and-red-teaming.md) for adversarial findings and [templates](../guides/project-templates.md) for evidence records.
+
+The supplied split is educational: its labels and regression tests are visible. It is not a blind benchmark. Once you have seen them, obtain fresh independently authored cases for meaningful held-out validation.
 
 ## Check understanding
 

@@ -4,7 +4,7 @@ This is a standalone guide to applied AI systems, with a practical focus on lang
 
 ## Scope and prerequisites
 
-Start with basic programming: variables, functions, lists/dictionaries and running a command in a terminal. Prior Python experience helps but is not essential if you work through [the cheat sheet](02-python-cheatsheet.md) and [pytest tutorial](14-pytest-tutorial.md). Use Python 3.10+.
+Start with basic programming: variables, functions, lists/dictionaries and running a command in a terminal. Prior Python experience helps but is not essential if you work through [the cheat sheet](../lessons/02-python.md) and [pytest tutorial](../lessons/03-pytest.md). Use Python 3.10+.
 
 The core project runs offline with the standard library. Pytest, the UI, SDK snippets and Azure exercises have separately documented dependencies. Cloud and local-model inference are optional extensions requiring appropriate access or hardware.
 
@@ -19,7 +19,7 @@ The strongest outcome is understanding how to build, test and operate an AI-assi
 | Cloud practice | Offline project -> Azure lab -> deployment/recovery exercises | Explain identity, endpoint, permissions, state and resource cost |
 | Mentor | Any learner route -> mentor playbook -> pairing/teach-back | Help someone diagnose a failure and explain the fix themselves |
 
-See [00: Start here](00-start-here.md) for a more detailed sequence and checkpoints. Read numbers identify resources, not a compulsory reading order.
+See [Start here](start-here.md) for a more detailed sequence and checkpoints. Lesson numbers follow the recommended order; use reference guides when needed. For the reviewed course, follow [the course companion](course-companion.md): lessons 01–08 cover the first-week engineering patterns; providers and Azure are optional extensions when those services are actually used. No live model account is required for the local replay or MCP exercises.
 
 ## Readiness checkpoints
 
@@ -39,9 +39,9 @@ See [00: Start here](00-start-here.md) for a more detailed sequence and checkpoi
 
 An orientation weekend can cover the offline setup, a small Python change, data profiling, one agent trace and starter evals. Add several focused sessions for deeper understanding, live model access, cloud setup, reliability and mentoring practice. Allow extra time for permissions and environment issues.
 
-Useful evidence includes a scoped brief, data readiness note, architecture sketch, test/eval report, failure log, ownership table, cost estimate and handoff/runbook. [Lesson 10](10-project-templates.md) supplies templates.
+Useful evidence includes a scoped brief, data readiness note, architecture sketch, test/eval report, failure log, ownership table, cost estimate and handoff/runbook. [Templates guide](project-templates.md) supplies templates.
 
-The sample project is a fictional onboarding document-review assistant. Its invoice validation and assigned risk labels are teaching mechanics, not regulatory standards. Transfer the patterns to another domain using [lesson 13](13-reliability-and-transfer-project.md).
+The sample project is a fictional onboarding document-review assistant. Its invoice validation and assigned risk labels are teaching mechanics, not regulatory standards. Transfer the patterns to another domain using [Reliability guide](../lessons/12-reliability-and-transfer.md).
 
 ## Mentoring and project agreements
 

@@ -1,0 +1,44 @@
+[
+  {
+    "application_id": "PRACTICE-APP-5001",
+    "status": "NO_FLAGS",
+    "review_count": 0,
+    "pending": false,
+    "split": "practice"
+  },
+  {
+    "application_id": "PRACTICE-APP-5002",
+    "status": "COMPLIANCE_REVIEW",
+    "review_count": 1,
+    "pending": false,
+    "split": "practice"
+  },
+  {
+    "application_id": "PRACTICE-APP-5003",
+    "status": "MISSING_DATA",
+    "review_count": 0,
+    "pending": true,
+    "split": "practice"
+  },
+  {
+    "application_id": "PRACTICE-APP-5004",
+    "status": "SCREENING_UNAVAILABLE",
+    "review_count": 0,
+    "pending": true,
+    "split": "practice"
+  },
+  {
+    "application_id": "PRACTICE-APP-5005",
+    "status": "FLAGGED",
+    "review_count": 0,
+    "pending": false,
+    "split": "practice"
+  },
+  {
+    "application_id": "PRACTICE-APP-5006",
+    "status": "COMPLIANCE_REVIEW",
+    "review_count": 1,
+    "pending": false,
+    "split": "holdout"
+  }
+]

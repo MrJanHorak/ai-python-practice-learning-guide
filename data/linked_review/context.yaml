@@ -1,0 +1,6 @@
+# Reading exercise only; the runner selects its variant through --context.
+context:
+  include_current_state: true
+  history_limit: 2
+  required_scope: [entity_type, jurisdiction, as_of]
+fault: "search_policy:unavailable"

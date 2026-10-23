@@ -1,8 +1,8 @@
-# Python Cheat Sheet for the AI Systems Learning Guide
+# 02: Read and run Python
 
 Goal: read Python, run it, test it and diagnose failures. You do not need to be an expert writer. If you know JavaScript/TypeScript, the comparison table may help; otherwise focus on the Python examples and the linked beginner tutorial.
 
-Runnable code now lives in `examples/ai_systems/`. Start at [README](README.md), then use [the provider lab](06-model-provider-lab.md) for Anthropic, OpenAI, Gemini and local-model equivalents. No provider is assumed to be your project's final choice.
+Runnable code now lives in `examples/ai_systems/`. Start at [README](../README.md), then use [the provider lab](09-model-providers.md) for Anthropic, OpenAI, Gemini and local-model equivalents. No provider is assumed to be your project's final choice.
 
 ---
 
@@ -106,7 +106,7 @@ Read **bottom-up**: the last line is the error type and message (`KeyError: 'nam
 
 ## 4. pytest essentials
 
-For a step-by-step explanation and runnable exercises, use [lesson 14: pytest](14-pytest-tutorial.md). This section is a quick reference once you have written your first test.
+For a step-by-step explanation and runnable exercises, use [pytest guide: pytest](03-pytest.md). This section is a quick reference once you have written your first test.
 
 ```python
 # tests/test_scoring.py
@@ -160,7 +160,7 @@ Pydantic is how many Python agent projects define the **output contract** and to
 
 ## 6. Calling models: four equivalent approaches
 
-Use [lesson 06](06-model-provider-lab.md) for side-by-side SDK snippets and native REST implementations for OpenAI, Anthropic, Gemini and local Ollama. Start without credentials:
+Use [Providers guide](09-model-providers.md) for side-by-side SDK snippets and native REST implementations for OpenAI, Anthropic, Gemini and local Ollama. Start without credentials:
 
 ```powershell
 python -m examples.ai_systems chat --provider mock --prompt "Explain what this lab does"
@@ -374,6 +374,6 @@ pytest --pdb                  # drop into debugger on failure
 
 ## 14. HTTP, service operations and asynchronous code
 
-Trace one request through URL, method, authentication, JSON body, HTTP status and response schema. A 401, 403, 429 or timeout suggests different first checks; see [the troubleshooting playbook](09-mentor-troubleshooting-and-assessment.md). Do not blindly retry non-idempotent writes. The sample model transport uses a 45-second per-request timeout and no automatic retries.
+Trace one request through URL, method, authentication, JSON body, HTTP status and response schema. A 401, 403, 429 or timeout suggests different first checks; see [the troubleshooting playbook](../guides/mentor-playbook.md). Do not blindly retry non-idempotent writes. The sample model transport uses a 45-second per-request timeout and no automatic retries.
 
 An SDK poller waits for a long-running server operation. Python `async def` controls concurrency in the client. Understand both before trying to fix latency by adding `async`. Add bounded backoff only after reproducing the error and deciding whether a retry is appropriate.

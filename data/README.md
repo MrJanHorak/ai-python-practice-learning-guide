@@ -4,13 +4,15 @@ All records, documents and policy rules here were authored for learning. They co
 
 ## Inventory
 
+The original customer/invoice fixtures below remain available. The separate [linked-review dataset](linked_review/README.md) adds applications, parties, documents, policy versions, scripted replay and usage examples for the new course preparation path. It uses its own identifiers and manifest.
+
 | File | Contents | Exercise |
 |---|---|---|
 | `customers_clean.csv` | 12 valid rows under this demo's narrow checks | Customer lookup and joins |
 | `customers_messy.csv` | 12 rows with deliberately planted defects | Data profiling and readiness note |
 | `extraction_fixtures.json` | 12 hand-authored normalized invoice extractions | Validation, confidence, recovery and injected text |
 | `eval_cases.json` | 12 prompts plus evaluator-only expectations | Tool trajectory, answer and state checks |
-| `classification_scores.csv` | 20 invented binary labels and scores, including two positive cases | Precision, recall, thresholds and misleading accuracy in lesson 12 |
+| `classification_scores.csv` | 20 invented binary labels and scores, including two positive cases | Precision, recall, thresholds and misleading accuracy in Evaluation guide |
 | `policies/index.json` and four policy Markdown files | Three active documents and one obsolete version | Retrieval, citations, versioning and insufficient evidence |
 | `document_manifest.json` | Known values for the three synthetic source PDFs | Manual comparison of actual Azure extraction |
 | `documents/invoice-clean.pdf` | Original native-text invoice with fields/table | First live extraction |

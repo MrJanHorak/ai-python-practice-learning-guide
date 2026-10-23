@@ -1,0 +1,30 @@
+{
+  "applications.csv": {
+    "sha256": "83cafc24673f2de52832e456dd6891721cdd066994e8a327c0d7ff9b990ec3e0",
+    "rows": 6
+  },
+  "documents.csv": {
+    "sha256": "0e8fc7cc18de6fe256eb176cd988cb986ca2daf6c9b7177352dfaad69aba1055",
+    "rows": 16
+  },
+  "expected_outcomes.json": {
+    "sha256": "b7138277b1dc3b4050570b8d677b21ec8238d9795bbb7d1da3809f53e5dbd7e0",
+    "rows": null
+  },
+  "parties.csv": {
+    "sha256": "c823b8f3dd2836b0fe8b7f6c233ded858c6f515024a4d3d306cb0b4f5c419d2f",
+    "rows": 18
+  },
+  "policies.json": {
+    "sha256": "8ceb42237beef590e5983dbd00ea7d4aa7240fddbcb971aed170a846e98fcd6a",
+    "rows": null
+  },
+  "recordings.json": {
+    "sha256": "b48d87f1fffe3902950c1e8e33d3315bde0ebb6ed7190e979a669ad6bc8547f5",
+    "rows": null
+  },
+  "screening.csv": {
+    "sha256": "a505c869f82bbc7c0d2aa69f06824cf6bfec10ebe20b849ef08b540386664bcd",
+    "rows": 18
+  }
+}

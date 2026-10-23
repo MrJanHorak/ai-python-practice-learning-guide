@@ -1,0 +1,42 @@
+[
+  {
+    "id": "POL-COMPANY-XA-v1",
+    "entity_type": "COMPANY",
+    "jurisdiction": "XA",
+    "effective_from": "2025-01-01",
+    "effective_to": "2026-10-01",
+    "content": "Review possible matches with a human. Superseded practice policy."
+  },
+  {
+    "id": "POL-COMPANY-XA-v2",
+    "entity_type": "COMPANY",
+    "jurisdiction": "XA",
+    "effective_from": "2026-10-01",
+    "effective_to": "2099-01-01",
+    "content": "Review every possible match, including beneficial owners, with a human."
+  },
+  {
+    "id": "POL-PERSON-XA-v1",
+    "entity_type": "PERSON",
+    "jurisdiction": "XA",
+    "effective_from": "2025-01-01",
+    "effective_to": "2099-01-01",
+    "content": "Review a personal application with a human."
+  },
+  {
+    "id": "POL-COMPANY-XB-v1",
+    "entity_type": "COMPANY",
+    "jurisdiction": "XB",
+    "effective_from": "2025-01-01",
+    "effective_to": "2099-01-01",
+    "content": "Review a company under the fictional XB rules."
+  },
+  {
+    "id": "POL-COMPANY-XA-future",
+    "entity_type": "COMPANY",
+    "jurisdiction": "XA",
+    "effective_from": "2027-01-01",
+    "effective_to": "2099-01-01",
+    "content": "Review under a future policy. Not yet in force."
+  }
+]

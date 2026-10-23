@@ -1,4 +1,4 @@
-# Lesson 10: reusable project and teaching templates
+# Reusable project and teaching templates
 
 Copy sections into your own evidence folder. Replace bracketed prompts with concrete, testable statements. These are practice templates; use your project's official standards and rubric where provided.
 
@@ -136,3 +136,25 @@ Evidence links and reproducible demo script:
 ```
 
 Practise answering: Why is an agent justified here? What fails first? How do you know? Which decisions must remain human? What changes at ten times the volume? What is ready for handoff and what still needs engineering work?
+
+## 8. Course-aligned evidence and handoff templates
+
+Use these independently of a provider. Replace sample requirements with the actual assignment's criteria.
+
+| Requirement ID | Criterion | Command/input | Expected | Observed | Evidence file/line/correlation ID | Mode/build | PASS/FAIL/UNVERIFIED | Limit/owner |
+|---|---|---|---|---|---|---|---|---|
+| R-1 | Every linked party screened | Named synthetic case | All party IDs checked | Fill from trace | Sanitized path and event | Replay and commit | Fill after running | Live variation untested |
+
+The reviewed course's five minimum POC criteria cover reading real data rather than embedding case facts in prompts, completing the scoped task, an honest pending-review interface without application approval controls, a runnable case with clean logs, and missing-data/unknown-ID behavior without a crash or unnecessary model call. Read the current floor file for exact assertions. Passing those five is not equivalent to passing every hard-rule eval or proving production readiness.
+
+For each capability, write **claim → evidence → limitation**. Include mode (authored/replay/live), exact command, dataset/suite fingerprints, code version, relevant file/line or correlation ID, test selection and unverified conditions. Do not claim an eval run when you only ran a floor checker.
+
+```text
+Monitoring: metric / window / minimum sample / threshold / owner / response.
+Control: action / permission class / identity source / resource+payload scope / approval check / default deny test.
+Attack: ID / input path / command / correlation ID / observed / expected / severity.
+Open question: question / impact / owner / evidence needed / blocked work / next review.
+Escalation: Signal / sanitized Evidence / Ask / receiving owner / next update.
+```
+
+A runbook entry needs a trigger, immediate safe action, diagnostic command, expected observation, recovery verification and owner. Distinguish pausing a failing service workflow from approving one particular review. Ask another person to reproduce the handoff on a clean branch using only the instructions; record where they needed help.

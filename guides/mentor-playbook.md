@@ -1,4 +1,4 @@
-# Lesson 09: Mentor troubleshooting, coaching and assessment evidence
+# Mentor playbook: troubleshooting, coaching and assessment evidence
 
 Goal: help the learner explain and resolve a failure while retaining ownership of their work. Agree on the mentoring scope, review responsibilities, escalation contacts and availability. A learner studying independently can use the same questions for self-review or peer support.
 
@@ -65,6 +65,14 @@ Use the following evidence to review understanding. Agree project-specific accep
 | Transfer project | A second use case with independently chosen architecture and evaluation | Can the learner apply the ideas without copying the first design? |
 
 The supplied twelve eval cases are starter checks. Do not invent a universal pass percentage or treat a mock pass as evidence of learner mastery. Calibrate feedback with examples of strong, borderline and incomplete work. A self-studying learner can record a teach-back and review it against the same criteria.
+
+## Course preparation and escalation drills
+
+Use [the course companion](course-companion.md) to confirm the exact starter, interpreter, dependencies, branch, recording variant and expected selected tests. Explain new terms before using acronyms. Ask the learner to predict an observation before running a command.
+
+Rehearse: (1) an MCP server waiting normally versus failing to start, (2) a query denied by Azure versus a local filtered result, (3) an unsupported replay variant, (4) skipped assignment tests, and (5) a reply lost after a committed write. Use [lesson 07](../lessons/07-mcp-and-integration-tests.md) for local reproducible checks.
+
+Keep responsibilities explicit: **Own** diagnosis and staged hints; **Share** scope/rubric ambiguity with the lead; **Hand off** credentials, platform policy, production access and authorization exceptions. Escalate with **Signal / Evidence / Ask**, naming an owner and leaving secrets out. A missing business fact remains an open question with an owner.
 
 ## Support-note template
 

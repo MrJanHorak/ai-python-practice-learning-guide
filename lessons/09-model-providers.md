@@ -1,10 +1,10 @@
-# Lesson 06: the same task with Anthropic, OpenAI, Gemini and a local LLM
+# 09: The same task with Anthropic, OpenAI, Gemini and a local LLM
 
 Goal: run the same prompt, tools and evals across providers, then explain what changes in the protocol and what stays in application code. Examples were checked against official documentation on 21 October 2026; choose model IDs actually available to your account/server. No model choice is assumed to be your project's requirement.
 
 ## 1. Two different uses of models
 
-**Coding agent:** Claude Code, OpenAI Codex or Gemini CLI can help inspect and modify a repository. Use the same spec and acceptance tests from [lesson 10](10-project-templates.md); inspect the resulting diffs. Tool installation, authorization and billing depend on the product.
+**Coding agent:** Claude Code, OpenAI Codex or Gemini CLI can help inspect and modify a repository. Use the same spec and acceptance tests from [Templates guide](../guides/project-templates.md); inspect the resulting diffs. Tool installation, authorization and billing depend on the product.
 
 **Application model:** your running Python application calls a model API to answer a user or propose a tool call. An API SDK alone does not provide repository editing, a shell, MCP or deployment. This lesson implements that application side. A local chat model needs an additional coding-agent host if you want it to edit repos autonomously.
 
@@ -172,7 +172,7 @@ Do not put `data/answers/` or expected labels into model context. `mock` is scri
 
 ## 8. Azure-hosted models are another deployment choice
 
-Direct OpenAI, Azure OpenAI and other Foundry deployments can differ in endpoint, authentication, deployment name, model availability and API support. The `openai` CLI adapter above targets the direct OpenAI API. Use the Azure-specific SDK example and guidance in [lesson 07](07-azure-hands-on-lab.md) for an Azure OpenAI deployment; do not swap only the API key.
+Direct OpenAI, Azure OpenAI and other Foundry deployments can differ in endpoint, authentication, deployment name, model availability and API support. The `openai` CLI adapter above targets the direct OpenAI API. Use the Azure-specific SDK example and guidance in [Azure guide](10-azure.md) for an Azure OpenAI deployment; do not swap only the API key.
 
 ## Official references
 

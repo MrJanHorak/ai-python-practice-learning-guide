@@ -1,4 +1,4 @@
-# Lesson 13: make the system reliable and apply it elsewhere
+# 12: Make the system reliable and apply it elsewhere
 
 Learning outcome: explain what happens after failure, then design a second use case without assuming the same architecture is always appropriate.
 
@@ -26,6 +26,18 @@ Avoid an automatic approval fallback when a model, extraction step or service fa
 Track request success/review/error rates, latency distribution, timeouts, model/tool-call counts, token/service usage, invalid tool arguments and duplicate/conflict events. Observe quality on representative labeled samples and user feedback; a running endpoint can still deliver poor answers. Investigate source freshness and changing input distributions when performance shifts.
 
 Use request/correlation IDs to connect events. Avoid logging secrets, unnecessary sensitive documents or hidden model reasoning. Prefer the minimum trace needed to explain permitted tool decisions, evidence, status and saved state, with appropriate access and retention for the real deployment.
+
+## Worked exercise: cost every call, then plan monitoring
+
+Run `python -m examples.learning_lab.costs`. Read the four lines in `data/linked_review/usage_sample.jsonl`. They describe two invented cases, including one chargeable retry. The prices are invented: 2 currency units per million input tokens and 8 per million output tokens.
+
+For one call: `(input_tokens × input_rate + output_tokens × output_rate) / 1,000,000`. Sum every call for a case. The sample totals are A = 0.00556, B = 0.00244, total = 0.008, mean per case = 0.004. Three calls in A are not three user cases. The retry-call fraction is 1/4 = 25%; this is not the fraction of cases that retried, which is 1/2.
+
+At an assumed 100 cases/day for 30 days, the mean implies 12 currency units in token cost. This excludes search, extraction, hosting, storage and monitoring. Two authored cases cannot establish a real workload forecast. In a live exercise, use measured per-call usage and current rates, identify cache/reasoning/service charges correctly, and show low/base/high volumes and uncertainty. Do not use these numbers as provider prices.
+
+Peak demand drives capacity even when monthly averages look affordable. Record daily and peak-hour case volumes, calls per case, retry fraction, review fraction, latency and fallback use. For latency, state a percentile convention; for example, nearest-rank p95 of 20 sorted observations is the 19th. A tiny sample gives weak tail evidence.
+
+Write a monitoring record with metric, window, threshold, owner and response. Example for rehearsal only: “Search unavailable on more than 2% of calls in 15 minutes; service owner checks endpoint/permissions and pauses affected automation if needed.” Explain why a threshold needs a minimum sample size and why an alert does not enforce a spending cap. Separately bound calls, retries, request sizes and concurrency in software, and identify the kill-switch owner.
 
 ## 4. Access and untrusted content
 

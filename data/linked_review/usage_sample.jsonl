@@ -1,0 +1,4 @@
+{"case_id":"usage-A","call":1,"input_tokens":1200,"output_tokens":100,"retry":false}
+{"case_id":"usage-A","call":2,"input_tokens":100,"output_tokens":20,"retry":true}
+{"case_id":"usage-A","call":3,"input_tokens":800,"output_tokens":50,"retry":false}
+{"case_id":"usage-B","call":1,"input_tokens":900,"output_tokens":80,"retry":false}

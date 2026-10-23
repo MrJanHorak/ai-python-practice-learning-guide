@@ -39,7 +39,7 @@ if submit:
         st.json(result)
     except Exception as error:
         # Show class only: SDK/server error strings can contain private details.
-        st.error(f"Request failed ({type(error).__name__}). Check local configuration and lesson 09.")
+        st.error(f"Request failed ({type(error).__name__}). Check local configuration and guides/mentor-playbook.md.")
     finally:
         store.close()
 

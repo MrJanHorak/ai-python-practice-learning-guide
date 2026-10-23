@@ -1,4 +1,4 @@
-# Lesson 14: pytest from a first assertion to testing an AI application
+# 03: pytest from a first assertion to testing an AI application
 
 Learning outcome: write a useful deterministic test, read a failure, reuse safe setup and test model boundaries without calling a paid service. The runnable examples are in `tutorials/pytest/`; the existing `tests/` suite uses Python's built-in unittest framework and can also be run by pytest.
 
@@ -168,4 +168,4 @@ Optional later topic: coverage can help locate unexecuted paths, but a coverage 
 
 Before reviewing a proposed fix, ask: Which requirement failed? What would make this test fail for the wrong reason? Does it inspect the state that matters? Would it accidentally use the network? Can a different valid implementation satisfy it?
 
-You are ready to move on when you can explain a failure, add an independently justified case and demonstrate that a blocked operation leaves state unchanged. Continue with [evaluation](12-evaluation-and-experiments.md) to distinguish these tests from broader model-quality evidence.
+You are ready to move on when you can explain a failure, add an independently justified case and demonstrate that a blocked operation leaves state unchanged. Next work through [configuration and replay](04-files-configuration-and-replay.md), then [MCP/integration testing](07-mcp-and-integration-tests.md). Those tutorials extend these basics with a real subprocess, spies, skips/deselection, scoped writes and a timeout after commit. Use [evaluation](08-evaluation.md) to distinguish test evidence from broader model-quality evidence.

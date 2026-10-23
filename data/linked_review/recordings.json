@@ -1,0 +1,44 @@
+{
+  "PRACTICE-APP-5001": {
+    "origin": "authored-script-not-a-live-model",
+    "model": "none",
+    "input_tokens": 100,
+    "output_tokens": 30,
+    "text": "A person must decide; this exercise makes no application decision."
+  },
+  "PRACTICE-APP-5002": {
+    "origin": "authored-script-not-a-live-model",
+    "model": "none",
+    "input_tokens": 120,
+    "output_tokens": 30,
+    "text": "A person must decide; this exercise makes no application decision."
+  },
+  "PRACTICE-APP-5003": {
+    "origin": "authored-script-not-a-live-model",
+    "model": "none",
+    "input_tokens": 140,
+    "output_tokens": 30,
+    "text": "A person must decide; this exercise makes no application decision."
+  },
+  "PRACTICE-APP-5004": {
+    "origin": "authored-script-not-a-live-model",
+    "model": "none",
+    "input_tokens": 160,
+    "output_tokens": 30,
+    "text": "A person must decide; this exercise makes no application decision."
+  },
+  "PRACTICE-APP-5005": {
+    "origin": "authored-script-not-a-live-model",
+    "model": "none",
+    "input_tokens": 180,
+    "output_tokens": 30,
+    "text": "A person must decide; this exercise makes no application decision."
+  },
+  "PRACTICE-APP-5006": {
+    "origin": "authored-script-not-a-live-model",
+    "model": "none",
+    "input_tokens": 200,
+    "output_tokens": 30,
+    "text": "A person must decide; this exercise makes no application decision."
+  }
+}

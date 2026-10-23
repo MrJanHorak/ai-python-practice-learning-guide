@@ -1,0 +1,19 @@
+party_id,application_id,role,display_name
+PRACTICE-PARTY-10,PRACTICE-APP-5001,company,Invented party 1-0
+PRACTICE-PARTY-11,PRACTICE-APP-5001,director,Invented party 1-1
+PRACTICE-PARTY-12,PRACTICE-APP-5001,beneficial_owner,Invented party 1-2
+PRACTICE-PARTY-20,PRACTICE-APP-5002,company,Invented party 2-0
+PRACTICE-PARTY-21,PRACTICE-APP-5002,director,Invented party 2-1
+PRACTICE-PARTY-22,PRACTICE-APP-5002,beneficial_owner,Invented party 2-2
+PRACTICE-PARTY-30,PRACTICE-APP-5003,company,Invented party 3-0
+PRACTICE-PARTY-31,PRACTICE-APP-5003,director,Invented party 3-1
+PRACTICE-PARTY-32,PRACTICE-APP-5003,beneficial_owner,Invented party 3-2
+PRACTICE-PARTY-40,PRACTICE-APP-5004,company,Invented party 4-0
+PRACTICE-PARTY-41,PRACTICE-APP-5004,director,Invented party 4-1
+PRACTICE-PARTY-42,PRACTICE-APP-5004,beneficial_owner,Invented party 4-2
+PRACTICE-PARTY-50,PRACTICE-APP-5005,company,Invented party 5-0
+PRACTICE-PARTY-51,PRACTICE-APP-5005,director,Invented party 5-1
+PRACTICE-PARTY-52,PRACTICE-APP-5005,beneficial_owner,Invented party 5-2
+PRACTICE-PARTY-60,PRACTICE-APP-5006,company,Invented party 6-0
+PRACTICE-PARTY-61,PRACTICE-APP-5006,director,Invented party 6-1
+PRACTICE-PARTY-62,PRACTICE-APP-5006,beneficial_owner,Invented party 6-2

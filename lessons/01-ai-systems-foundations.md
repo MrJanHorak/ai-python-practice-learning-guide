@@ -1,4 +1,4 @@
-# Lesson 11: how the parts of an AI system fit together
+# 01: How the parts of an AI system fit together
 
 Learning outcome: explain a request from input to final state, and choose a sensible role for a model. Read the worked example before changing the code.
 
@@ -90,7 +90,7 @@ Read the corresponding functions and point at each boundary. The example's local
 
 For an exact lookup, a direct database query is sufficient. A model may become useful when interpreting varied language, combining evidence or drafting explanations. An agent becomes useful when choosing the next step cannot be adequately handled by a simpler workflow and its behavior can be evaluated.
 
-Start with the smallest design that meets the need. Add complexity only when measured task quality, coverage or usability improves enough to justify cost and failure modes. See [evaluation](12-evaluation-and-experiments.md) for how to make that comparison.
+Start with the smallest design that meets the need. Add complexity only when measured task quality, coverage or usability improves enough to justify cost and failure modes. See [evaluation](08-evaluation.md) for how to make that comparison.
 
 ## Check understanding
 

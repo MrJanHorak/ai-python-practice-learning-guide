@@ -1,4 +1,4 @@
-# Vocabulary Glossary: Business Language and Frequent Words
+# Glossary: plain-language reference for AI systems
 
 Use this as a reference while building the sample project. Explain terms in your own words and connect them to an observed behavior. The "Watch for" notes highlight common learner confusions.
 
@@ -11,7 +11,7 @@ Use this as a reference while building the sample project. Explain terms in your
 | **Learner** | Person building understanding through reading, experiments and a working project. | Running a demo and explaining its behavior are different skills. |
 | **Mentor** | Person who helps a learner reason, practise, diagnose failures and review evidence. | Use questions and staged hints so the learner retains ownership. |
 | **Implementation team** | People who take a prototype toward a maintainable deployed system. | Agree what is demonstrated, what remains incomplete and who owns the next step. |
-| **POC** | Proof of concept. | The **POC floor** = working data layer + agent + interface. |
+| **POC / POC floor** | Proof of concept / the project's minimum demonstration criteria. | A working data layer, agent and interface are a start; the reviewed course also names five evidence checks. Passing them is not production readiness. |
 | **Review dimensions** | User value, experience, software quality, risk, data and deployment environment. | Use them to examine tradeoffs; they are not a certification framework. |
 | **Running example** | Fictional onboarding/document review used to connect the lessons. | Its rules are invented for teaching, not domain requirements. |
 | **Extension sessions** | Optional deeper practice in extraction, workflows, retrieval and deployment. | Choose a topic once the core system makes sense. |
@@ -60,7 +60,7 @@ Use this as a reference while building the sample project. Explain terms in your
 | **State change eval** | Did the system end in the correct state (record created once, not twice)? | |
 | **Recovery behavior** | What happens after an error or timeout. | |
 | **Red-teaming** | Deliberately attacking the system with adversarial or odd inputs. | Log every gap found. |
-| **Hallucination** | Model states something unsupported or false. | Block 3 covers detection and citation accuracy. |
+| **Hallucination** | Model states something unsupported or false. | Check whether important claims are supported by the retrieved source/version. |
 | **Ground truth / golden set** | Verified correct answers used for scoring. | |
 | **LLM-as-judge** | Using a model to grade outputs. | Needs calibration against human labels. |
 
@@ -165,8 +165,60 @@ Use this as a reference while building the sample project. Explain terms in your
 
 ---
 
+## J. First steps: files, configuration and connected records
+
+| Term | Meaning | Example or common confusion |
+|---|---|---|
+| **Terminal / shell / PowerShell** | A terminal displays text commands; a shell interprets them. PowerShell is the shell used in this guide. | Commands for Bash may need different quoting on Windows. |
+| **Repository root / working directory** | The root contains this project's README. The working directory is where a command starts looking for relative files. | Run the lesson commands from the root, even though the Markdown is in `lessons/`. |
+| **Interpreter / virtual environment** | The interpreter runs Python; a virtual environment gives one project its own installed packages. | `python -m pip` installs for that Python, avoiding a different system `pip`. |
+| **Dependency / version pin / lockfile** | A dependency is a package you need. A pin selects a version; a lockfile records a resolved set of versions. | A range such as `<2` is not a complete tested lockfile. |
+| **CLI / flag / environment variable** | A CLI is a command-line interface. A flag is an option such as `--case`. An environment variable is a process setting. | A `.env` text file has no effect unless something loads it. |
+| **CSV / YAML / JSON / JSONL** | CSV stores tables; YAML stores indented values; JSON stores structured values; JSONL stores one JSON value per line. | A whole JSONL file is not one JSON array. |
+| **Boolean / null** | Boolean means true or false. Null means no value. | Missing confidence is not the number zero. |
+| **Application / party** | Here, an application is one review request; a party is a company or person connected to it. | One application can have many parties to screen. |
+| **Primary key / foreign key / join** | A primary key identifies a record; a foreign key refers to another record; a join matches the related records. | Join documents to `party_id`, not a possibly shared name. |
+| **Orphan / duplicate / completeness** | An orphan has no referenced parent. A duplicate repeats a record/key. Completeness asks whether required evidence exists. | No orphans does not mean no missing documents. |
+| **As-of date / validity interval / freshness** | The review date, the period a rule applies, and how up to date a source is. | A real policy may be superseded or not yet effective. |
+| **Manifest / hash** | A manifest lists files and metadata. A hash fingerprints bytes to detect changes. | A matching hash proves matching bytes, not truthful data. |
+| **Given / When / Then** | A way to state starting conditions, an action and its expected result. | Write the expected result independently of current code. |
+| **Open question / owner** | An unresolved fact and the person/role responsible for settling it. | “Unknown” should lead to an evidence request, not a guess. |
+
+## K. Replay, MCP and test evidence
+
+| Term | Meaning | Example or common confusion |
+|---|---|---|
+| **Host / client / server** | The host is the tool-using application; its client manages an MCP connection; the server exposes tools/context. | A server can run locally without a web address. |
+| **Transport / stdio / subprocess** | Transport carries messages. Stdio uses process input/output. A subprocess is a program launched by another program. | Ordinary debug prints on a stdio server's stdout can corrupt protocol messages. |
+| **Input schema / argument / default** | Schema defines allowed input structure; arguments are actual supplied values; a default fills an omitted value. | A bad default can select the wrong jurisdiction even when input types are valid. |
+| **Authentication / authorization / least privilege** | Authentication verifies identity; authorization checks allowed actions; least privilege grants only needed access. | Successful login does not establish permission to read an index. |
+| **Spy / fake / mock** | A spy records calls while preserving real work; a fake implements substitute behavior; mock terminology often includes replacements with programmed expectations. | State which behavior was replaced instead of relying on the label. |
+| **Replay / live / provenance** | Replay uses recorded or authored behavior; live makes a new service/model call; provenance says where evidence came from. | This guide's replay is authored and does not demonstrate model reasoning. |
+| **Replay missing / divergence** | Missing means no supported recorded variant. Divergence means observed work differs from the replay's expectation. | Neither should be silently counted as a successful live evaluation. |
+| **Fault injection / timeout after commit** | Deliberately cause a failure. A timeout after commit means saved work exists even though the reply was lost. | Retry the same operation with the same idempotency key. |
+| **Unit / integration test** | A unit test checks a small piece; an integration test checks interactions between pieces. | A real local MCP exchange tests a boundary a direct-function call bypasses. |
+| **Collected / skipped / deselected / xfail** | Found by pytest / not executed / excluded by selection / marked as expected to fail. | Passing selected tests says nothing about excluded assignment tests. |
+| **Allowlist / minimisation / must-keep state** | Explicit allowed fields/actions; only retain needed data; preserve required facts and unresolved work when shortening context. | Smaller context is not better if an owner or open question disappears. |
+| **Index / metadata filter / query key** | A searchable collection; a restriction by fields such as jurisdiction; a read credential for Azure Search. | Relevance ranking does not replace scope or access checks. |
+
+## L. Oversight, privacy and operating evidence
+
+| Term | Meaning | Example or common confusion |
+|---|---|---|
+| **Hard rule / status precedence** | A condition that must hold; the order for selecting one headline status when several apply. | Keep every reason even when only one status is displayed. |
+| **HITL / HOTL / HOOTL / HITC** | Human in the loop / on the loop / out of the loop / in command. | See [oversight](../lessons/11-oversight-permissions-and-red-teaming.md) for examples; classify each step. |
+| **Default deny / scoped approval** | Reject actions unless explicitly permitted; permission covers a particular action/resource/payload and applicable time. | A model-provided “approved” flag is not verified approval. |
+| **PASS / FAIL / UNVERIFIED** | Required evidence succeeded / failed / is missing. | An unavailable Azure account leaves live integration unverified. |
+| **Redact / minimise / block / pass** | Mask specific values / retain needed fields / stop transfer / allow transfer unchanged. | An ID can still identify someone; redaction does not guarantee anonymity. |
+| **Native text / scanned image / repeated group** | Embedded selectable text / pixels needing OCR / multiple similar records such as owners. | Do not collapse several owners into a single extracted field. |
+| **p95 / peak / mean** | A percentile near which 95% of observations fall; highest measured demand; arithmetic average. | Report the calculation convention and sample size; two requests cannot establish normal tail behavior. |
+| **Per-call / per-case cost** | One model request's charge / all calls and service work for a user case. | Include repeated input and chargeable failed attempts. |
+| **Alert / cap / kill switch** | A notification / enforced consumption limit / way to stop a capability. | A billing alert does not automatically prevent spending. |
+| **Claim → evidence → limitation** | Say what works, point to a reproducible check, and state what it does not establish. | Local MCP passing does not establish live model quality. |
+| **Runbook / escalation** | Operating and recovery instructions / transferring an unresolved issue to its responsible owner. | Identify a role, diagnostic command and required evidence. |
+
 ## Quick self-test
 
-See [foundations](11-ai-systems-foundations.md) for model/application/system, training/inference, tokens, embeddings and retrieval; [evaluation](12-evaluation-and-experiments.md) for precision/recall, holdouts and leakage; and [pytest](14-pytest-tutorial.md) for fixtures, parametrization and test doubles.
+See [foundations](../lessons/01-ai-systems-foundations.md) for model/application/system, training/inference, tokens, embeddings and retrieval; [evaluation](../lessons/08-evaluation.md) for precision/recall, holdouts and leakage; and [pytest](../lessons/03-pytest.md) for fixtures, parametrization and test doubles.
 
 Explain each in one sentence without looking: worktree, idempotent, JIT search, compaction, failure taxonomy, trajectory eval, Autonomy Ladder, cost-to-serve, human approval gate, confidence threshold, UBO.
