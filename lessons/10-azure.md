@@ -4,7 +4,7 @@ Goal: explain the identity, endpoint, data contract and failure at every boundar
 
 ## 1. Prerequisites and access worksheet
 
-Record: tenant, subscription, resource group, region, Document Intelligence resource name, endpoint, permitted data, cost owner, role-assignment owner and cleanup date. Never put keys in that worksheet. Ask for the actual lab repository, expected Python/package versions and deployment service.
+Record: tenant, subscription, resource group, region, Document Intelligence resource name, endpoint, permitted data, cost owner, role-assignment owner and cleanup date. Never put keys in that worksheet. Record your chosen repository, Python/package versions and deployment service. For self-study, start locally and add cloud resources when you need them.
 
 With Azure CLI installed, sign in to the approved tenant and inspect the active subscription:
 

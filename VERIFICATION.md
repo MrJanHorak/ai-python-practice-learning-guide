@@ -1,11 +1,20 @@
 # Verification record
 
-Latest extension verification: **23 October 2026**. Earlier results below are retained as historical checks.
+Latest documentation verification: **24 October 2026**. Earlier results below are retained as historical checks.
 
-## Course preparation extension: executed 23 October
+## Standalone learning revision: executed 24 October
+
+- Replaced the scheduled companion with self-study learning workshops and updated navigation. Removed private source links and audience/employer/schedule-specific wording from maintained material. Optional Mentor support remains available alongside independent study.
+- Added a foundations checklist with processes/environments, value types, API/HTTP boundaries, SQL transactions, concurrency, probability/calibration and independent evaluation. Added a dataset coverage assessment that distinguishes supplied examples from extension work and unverified operating conditions.
+- Executed all **3 new foundation Python examples** successfully. Verified linked dataset counts and confirmed its fixture byte hashes still match the manifest; data and expectations were not regenerated.
+- Rechecked text and metadata of all **3 existing PDFs** for the removed organisation/audience labels; none found. The PDFs were not changed.
+- `python scripts/check_learning_material.py`: **32 Markdown files, 183 local links, 24 Python blocks and 31 Python files; zero errors**. The wording audit excluded Git history, environments, caches and scratch/output folders. A public external tutorial URL retains its publisher's own path.
+- `git diff --check` passed. Runtime behavior was not changed; two example docstrings were generalised. The previous 56-test integration run remains historical evidence from 23 October rather than a new full run for this documentation revision. No live model or Azure service was called.
+
+## Linked-data and integration extension: executed 23 October
 
 - Reorganised the fifteen root-level learning/reference Markdown files into numbered `lessons/` and unnumbered `guides/`; updated maintained local links. The root README remains the entry point.
-- Added six beginner lessons, a Days 1–12 course companion, expanded glossary, and extensions to evaluation, Azure, reliability, mentoring, templates and the workbook. Source links are in the companion. Google Drive material was read, not modified.
+- Added six beginner lessons, a workshop guide, expanded glossary, and extensions to evaluation, Azure, reliability, mentoring, templates and the workbook.
 - Created the independent fictional linked-review fixtures: 6 applications, 18 parties, 16 documents, 18 screening rows and 5 policy versions. Recording text and token counts are authored, not captured live responses.
 - Installed optional exercise dependencies into the separate ignored `.venv-learning` environment: Python **3.12.14**, pytest **9.1.1**, PyYAML **6.0.3**, MCP **1.30.0**, Pydantic **2.14.1**. Ranges in `requirements-learning.txt` are not a full dependency lockfile.
 - `python -m pytest tests tutorials -q`: **56 passed, 18 subtests passed**. The MCP integration checks ran with real local stdio server processes and temporary SQLite databases. They verified listing/schema errors, not-found handling, denied writes, persistence across restart and repeated-write deduplication. The Windows sandbox blocked the subprocess exchange; the successful full run used an approved execution outside that sandbox.
@@ -17,7 +26,7 @@ Latest extension verification: **23 October 2026**. Earlier results below are re
 ## Extension limitations
 
 - No live model, local inference server, Azure Search, Azure Document Intelligence, Azure OpenAI or hosted deployment was invoked. The optional new Azure Search script was syntax-checked; its SDK integration and permissions remain unverified live.
-- The small replay runner uses a fixed trajectory plus real local tools. It is not a model choosing actions, a replacement for the supplied course harness, or a full implementation of its hard rules and minimum POC criteria.
+- The small replay runner uses a fixed trajectory plus real local tools. It is not a model choosing actions, a general recorded-response replay engine, or a full implementation of every proposed workflow rule and minimum POC criterion.
 - Visible answer keys and regression tests make the practice/holdout split educational, not a blind benchmark. Dataset/suite/build fingerprints cover selected inputs, not an attestation of the whole environment.
 - The original interface was not started. Its renamed troubleshooting reference was updated; new document/interface material includes design exercises where runnable functionality is not provided.
 
@@ -44,7 +53,7 @@ Latest extension verification: **23 October 2026**. Earlier results below are re
 - Streamlit UI startup/browser interaction; its Python source was syntax-checked only.
 - Other optional SDK/UI dependency installation, lockfile generation and cross-version SDK compatibility.
 
-Official API documentation was consulted and linked in the lessons. Protocol fixture tests check the adapter's constructed requests and follow-up conversation state; they cannot establish account access, actual server compatibility, model availability, inference quality, cost or performance. Run one live smoke test for the selected environment before using it in a class.
+Official API documentation was consulted and linked in the lessons. Protocol fixture tests check the adapter's constructed requests and follow-up conversation state; they cannot establish account access, actual server compatibility, model availability, inference quality, cost or performance. Run one live smoke test for the selected environment before relying on a live-service example.
 
 Core unittest verification used bundled Python 3.12.14; pytest verification used the existing project virtual environment's Python 3.13.14. The source targets Python 3.10+, but Python 3.10/3.11 were not executed here. Core eval/unittest scratch directories live under ignored `output/`. The pytest tutorial uses isolated `tmp_path` directories and blocks this module's real model transport.
 

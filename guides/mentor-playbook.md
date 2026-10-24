@@ -66,13 +66,13 @@ Use the following evidence to review understanding. Agree project-specific accep
 
 The supplied twelve eval cases are starter checks. Do not invent a universal pass percentage or treat a mock pass as evidence of learner mastery. Calibrate feedback with examples of strong, borderline and incomplete work. A self-studying learner can record a teach-back and review it against the same criteria.
 
-## Course preparation and escalation drills
+## Independent practice and help-request drills
 
-Use [the course companion](course-companion.md) to confirm the exact starter, interpreter, dependencies, branch, recording variant and expected selected tests. Explain new terms before using acronyms. Ask the learner to predict an observation before running a command.
+Use [the learning workshops](learning-workshops.md) to record the selected project, interpreter, dependencies, branch, recording variant and expected selected tests. Explain new terms before using acronyms. Ask the learner to predict an observation before running a command.
 
 Rehearse: (1) an MCP server waiting normally versus failing to start, (2) a query denied by Azure versus a local filtered result, (3) an unsupported replay variant, (4) skipped assignment tests, and (5) a reply lost after a committed write. Use [lesson 07](../lessons/07-mcp-and-integration-tests.md) for local reproducible checks.
 
-Keep responsibilities explicit: **Own** diagnosis and staged hints; **Share** scope/rubric ambiguity with the lead; **Hand off** credentials, platform policy, production access and authorization exceptions. Escalate with **Signal / Evidence / Ask**, naming an owner and leaving secrets out. A missing business fact remains an open question with an owner.
+Keep responsibilities explicit: **Own** diagnosis and staged hints; **Share** scope/rubric ambiguity with a study partner or project owner; **Hand off** credentials, platform policy, production access and authorization exceptions. Escalate with **Signal / Evidence / Ask**, naming an owner and leaving secrets out. A missing business fact remains an open question with an owner.
 
 ## Support-note template
 

@@ -66,7 +66,7 @@ An LLM judge is another fallible grader. Compare its judgments with human labels
 
 Use the [evaluation template](../guides/project-templates.md). Include objective, baseline, cases and split, code/model/settings, rubric, results, worst failures, changes, repeated-run variation, cost/latency and unresolved limitations. Explain which findings come from deterministic tests, scripted fixtures or live models.
 
-## Course-style evaluation workshop
+## End-to-end evaluation workshop
 
 Start with the five practice cases: `python -m examples.learning_lab eval --split practice`. The runner prints JSONL with final status, tool events, review count and fingerprints. It checks only status, pending convention and review count. A passing row is not evidence that every hard rule was tested.
 

@@ -6,7 +6,7 @@
 
 A native-text PDF contains selectable text. A scanned PDF or PNG contains an image; OCR converts visible marks into text. OCR can misread a date even when the page looks sharp. Native text can also be incomplete or have a poor reading order. “PDF” alone does not tell you whether OCR is needed.
 
-The three existing [invoice PDFs](../data/documents/) are native-text starting points. The supplied course later uses several document types and scanned inputs. Rehearse with its authorized fixtures when available; this guide has not copied those documents or invented Azure results for them.
+The three existing [invoice PDFs](../data/documents/) are native-text starting points. These three PDFs do not cover scanned pages, several document types or repeating owner lists. The exercises below explain those extensions; create or obtain suitable synthetic inputs before evaluating them. No Azure results are fabricated for the supplied PDFs.
 
 Create an inventory with document ID, type, native/scan, readable fields, missing pages, repeated groups, chosen extraction route and human-review reason. A repeated group is a list, such as several owners on one page. Do not flatten it into a single owner and silently lose the rest.
 

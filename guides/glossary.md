@@ -11,7 +11,7 @@ Use this as a reference while building the sample project. Explain terms in your
 | **Learner** | Person building understanding through reading, experiments and a working project. | Running a demo and explaining its behavior are different skills. |
 | **Mentor** | Person who helps a learner reason, practise, diagnose failures and review evidence. | Use questions and staged hints so the learner retains ownership. |
 | **Implementation team** | People who take a prototype toward a maintainable deployed system. | Agree what is demonstrated, what remains incomplete and who owns the next step. |
-| **POC / POC floor** | Proof of concept / the project's minimum demonstration criteria. | A working data layer, agent and interface are a start; the reviewed course also names five evidence checks. Passing them is not production readiness. |
+| **POC / POC floor** | Proof of concept / the project's minimum demonstration criteria. | A working data layer, agent and interface are a start; a minimum demonstration should also have explicit evidence checks. Passing them is not production readiness. |
 | **Review dimensions** | User value, experience, software quality, risk, data and deployment environment. | Use them to examine tradeoffs; they are not a certification framework. |
 | **Running example** | Fictional onboarding/document review used to connect the lessons. | Its rules are invented for teaching, not domain requirements. |
 | **Extension sessions** | Optional deeper practice in extraction, workflows, retrieval and deployment. | Choose a topic once the core system makes sense. |
@@ -216,6 +216,21 @@ Use this as a reference while building the sample project. Explain terms in your
 | **Alert / cap / kill switch** | A notification / enforced consumption limit / way to stop a capability. | A billing alert does not automatically prevent spending. |
 | **Claim → evidence → limitation** | Say what works, point to a reproducible check, and state what it does not establish. | Local MCP passing does not establish live model quality. |
 | **Runbook / escalation** | Operating and recovery instructions / transferring an unresolved issue to its responsible owner. | Identify a role, diagnostic command and required evidence. |
+
+## M. Background for software and measurement
+
+| Term | Meaning | Watch for |
+|---|---|---|
+| **Process / memory / durable storage** | A running program / its temporary working values / saved data intended to survive restart. | A Python list and a database file have different lifetimes. |
+| **API / HTTP** | A defined interface / a common network request-response protocol. | JSON is a format; MCP is a protocol; neither means every call is HTTP. |
+| **Parsing / validation** | Reading a recognised representation / checking application requirements. | Valid JSON can still contain the wrong fields or values. |
+| **Transaction / atomicity** | A group of database changes / the group commits or rolls back together. | This does not automatically prevent duplication when a request is retried. |
+| **SQL / parameterised query** | A language for querying relational data / a query that binds values separately from SQL instructions. | Do not build SQL by inserting untrusted text into its structure. |
+| **Synchronous / asynchronous / concurrency** | Waiting before continuing / allowing other tasks to progress while waiting / overlapping task progress. | `async` alone does not accelerate remote model generation or fix shared-state races. |
+| **Feature / label** | An input property / the expected target in a learning or evaluation example. | A visible expected label must not leak into the model's input. |
+| **Probability / calibration / sample** | Uncertainty under assumptions / agreement between probabilities and observed frequencies / the observations being studied. | A score is not automatically a calibrated probability; tiny samples give limited evidence. |
+
+See [the foundations checklist](foundations-checklist.md) for worked examples and [data coverage](data-coverage-and-next-steps.md) for the limits of the current samples.
 
 ## Quick self-test
 

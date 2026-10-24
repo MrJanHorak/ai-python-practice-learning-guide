@@ -1,6 +1,6 @@
 # Linked review practice data
 
-Every record, name, rule, identifier, screening result and token count is invented for this guide. These are independent practice fixtures, not copies of the supplied course data and not regulatory requirements. Do not mix the two repositories' IDs or manifests.
+Every record, name, rule, identifier, screening result and token count is invented for this guide. These are independent practice fixtures, not regulatory requirements. Keep these IDs and this manifest separate from the original customer/invoice dataset.
 
 | File | Rows | Meaning and links |
 |---|---:|---|

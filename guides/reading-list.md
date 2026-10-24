@@ -13,12 +13,12 @@ New to the concepts? Begin with [the start-here guide](start-here.md) and [found
 2. Use the [Python tutorial](https://docs.python.org/3/tutorial/) alongside the local scoring example; run the offline tests.
 3. Read [Git worktrees](https://git-scm.com/docs/git-worktree), then create an isolated experiment and inspect its diff.
 4. Run the shared agent and evals from [README](../README.md). Inspect one tool trajectory and one denied write.
-5. Complete local [configuration/replay](../lessons/04-files-configuration-and-replay.md), [context/search](../lessons/06-context-and-search.md) and [MCP/testing](../lessons/07-mcp-and-integration-tests.md) exercises. Use [the course companion](course-companion.md) to choose what is needed next. Live Document Intelligence is a later step once sandbox access is ready.
+5. Complete local [configuration/replay](../lessons/04-files-configuration-and-replay.md), [context/search](../lessons/06-context-and-search.md) and [MCP/testing](../lessons/07-mcp-and-integration-tests.md) exercises. Use [the learning workshops](learning-workshops.md) to choose what is needed next. Live Document Intelligence is a later step once sandbox access is ready.
 
 ## References for the new practical lessons
 
 - [PyYAML documentation](https://pyyaml.org/wiki/PyYAMLDocumentation): loading standard YAML values; our lesson adds application validation.
-- [MCP Python SDK 1.x](https://py.sdk.modelcontextprotocol.io/v1/): API line deliberately used by this practice server/client. Use the actual course's pins there.
+- [MCP Python SDK 1.x](https://py.sdk.modelcontextprotocol.io/v1/): API line deliberately used by this practice server/client. Record and verify the dependency versions you choose.
 - [Pytest skip and xfail](https://docs.pytest.org/en/stable/how-to/skipping.html): interpret missing execution evidence.
 - [Azure SearchClient](https://learn.microsoft.com/en-us/python/api/azure-search-documents/azure.search.documents.searchclient?view=azure-python) and [key permissions](https://learn.microsoft.com/en-us/azure/search/search-security-api-keys): optional live query exercise, separate from extraction/model credentials.
 
@@ -86,7 +86,7 @@ Everything else is just-in-time reading for the upcoming lab. Reserve practice t
 - **[Must] Document Intelligence Studio:** upload a sample PDF and inspect output and confidence. https://documentintelligence.ai.azure.com
 - **[Should] Azure Container Apps overview:** https://learn.microsoft.com/azure/container-apps/overview
 - **[Should] Azure Key Vault overview:** https://learn.microsoft.com/azure/key-vault/general/overview
-- **[Should] Microsoft Foundry documentation:** https://learn.microsoft.com/en-us/azure/foundry/ ; confirm the actual resource, model deployment and SDK with the lead.
+- **[Should] Microsoft Foundry documentation:** https://learn.microsoft.com/en-us/azure/foundry/ ; confirm the actual resource, model deployment and SDK with a study partner or project owner.
 - **[Should] Python authentication:** https://learn.microsoft.com/en-us/azure/developer/python/sdk/authentication/overview ; explain how local and deployed identities differ.
 - **[Should] Microsoft agent labs:** https://microsoftlearning.github.io/mslearn-ai-agents/ ; select the basic agent, function and MCP exercises if this matches the learning path stack.
 - **[Later] Azure pricing calculator:** https://azure.microsoft.com/pricing/calculator
@@ -95,7 +95,7 @@ Everything else is just-in-time reading for the upcoming lab. Reserve practice t
 ## 9. Risk, responsible AI and governance
 
 - **[Should] Anthropic Responsible Scaling and usage policies** (for general framing): https://www.anthropic.com
-- **[Must] Obtain your project's internal risk checklist, approved examples and assessment rubric.** Public frameworks provide context; use the actual internal standards for review.
+- **[Must] Write a small project risk checklist and review criteria.** State permitted data, forbidden actions, required human decisions and evidence needed. If you work within an organisation, include its applicable requirements; for self-study, use the fictional project contract and identify its limits.
 - **[Should] Microsoft responsible AI resources:** https://www.microsoft.com/en-us/ai/responsible-ai
 - **[Later] NIST AI Risk Management Framework:** https://www.nist.gov/itl/ai-risk-management-framework
 
@@ -103,7 +103,7 @@ Everything else is just-in-time reading for the upcoming lab. Reserve practice t
 
 - **[Optional] FATF, "What is money laundering" and risk-based approach pages:** https://www.fatf-gafi.org
 - **[Should] FinCEN, CDD rule and SAR overview (US):** https://www.fincen.gov
-- **[Should] Map your project's assigned onboarding workflow:** identify the owner, required evidence and escalation at each step. The local fictional invoice project does not establish regulatory requirements.
+- **[Should] Map your chosen review workflow:** identify the owner, required evidence and escalation at each step. The local fictional invoice project does not establish regulatory requirements.
 - **[Later] Wolfsberg Group guidance:** https://www.wolfsberg-group.org
 
 ## 11. Presentation and handoff

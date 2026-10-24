@@ -137,15 +137,15 @@ Evidence links and reproducible demo script:
 
 Practise answering: Why is an agent justified here? What fails first? How do you know? Which decisions must remain human? What changes at ten times the volume? What is ready for handoff and what still needs engineering work?
 
-## 8. Course-aligned evidence and handoff templates
+## 8. Evidence and handoff templates
 
-Use these independently of a provider. Replace sample requirements with the actual assignment's criteria.
+Use these independently of a provider. Replace sample requirements with the criteria you chose for your project.
 
 | Requirement ID | Criterion | Command/input | Expected | Observed | Evidence file/line/correlation ID | Mode/build | PASS/FAIL/UNVERIFIED | Limit/owner |
 |---|---|---|---|---|---|---|---|---|
 | R-1 | Every linked party screened | Named synthetic case | All party IDs checked | Fill from trace | Sanitized path and event | Replay and commit | Fill after running | Live variation untested |
 
-The reviewed course's five minimum POC criteria cover reading real data rather than embedding case facts in prompts, completing the scoped task, an honest pending-review interface without application approval controls, a runnable case with clean logs, and missing-data/unknown-ID behavior without a crash or unnecessary model call. Read the current floor file for exact assertions. Passing those five is not equivalent to passing every hard-rule eval or proving production readiness.
+Five useful minimum demonstration checks cover reading real data rather than embedding case facts in prompts, completing the scoped task, an honest pending-review interface without application approval controls, a runnable case with clean logs, and missing-data/unknown-ID behavior without a crash or unnecessary model call. Write explicit checks for the subset you implement. Passing those five is not equivalent to passing every hard-rule eval or proving production readiness.
 
 For each capability, write **claim → evidence → limitation**. Include mode (authored/replay/live), exact command, dataset/suite fingerprints, code version, relevant file/line or correlation ID, test selection and unverified conditions. Do not claim an eval run when you only ran a floor checker.
 

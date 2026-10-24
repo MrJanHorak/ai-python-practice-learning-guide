@@ -1,4 +1,4 @@
-# Separate optional exercises; Python 3.10+. Use the course's own lockfile in its repo.
+# Separate optional exercises; Python 3.10+. Use a project-specific lockfile for a reproducible environment.
 # MCP v1 deliberately matches the API style taught here; this is not a production lock.
 pytest>=8,<10
 PyYAML>=6,<7

@@ -19,9 +19,11 @@ The strongest outcome is understanding how to build, test and operate an AI-assi
 | Cloud practice | Offline project -> Azure lab -> deployment/recovery exercises | Explain identity, endpoint, permissions, state and resource cost |
 | Mentor | Any learner route -> mentor playbook -> pairing/teach-back | Help someone diagnose a failure and explain the fix themselves |
 
-See [Start here](start-here.md) for a more detailed sequence and checkpoints. Lesson numbers follow the recommended order; use reference guides when needed. For the reviewed course, follow [the course companion](course-companion.md): lessons 01–08 cover the first-week engineering patterns; providers and Azure are optional extensions when those services are actually used. No live model account is required for the local replay or MCP exercises.
+See [Start here](start-here.md) for a more detailed sequence and checkpoints. Lesson numbers follow the recommended order; use reference guides when needed. For a practical sequence, follow [the learning workshops](learning-workshops.md): lessons 01–08 cover the local engineering patterns; providers and Azure are optional extensions when those services are actually used. No live model account is required for the local replay or MCP exercises.
 
 ## Readiness checkpoints
+
+Use [the foundations checklist](foundations-checklist.md) if the technical background is new, and [the data coverage guide](data-coverage-and-next-steps.md) to separate a completed practice exercise from evidence of broader robustness.
 
 | Stage | Demonstration | Understanding check |
 |---|---|---|

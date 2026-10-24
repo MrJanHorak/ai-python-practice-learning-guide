@@ -51,9 +51,11 @@ Lessons now live in `lessons/`, numbered in learning order. Reusable references 
 | [13: Document pipelines and privacy](lessons/13-document-pipelines-and-privacy.md) | OCR, repeating fields, confidence and data boundaries |
 | [14: Project workbook](lessons/14-project-workbook.md) | Put the ideas together through practice sessions |
 
-Use [Start here](guides/start-here.md), [the glossary](guides/glossary.md), [learning routes](guides/learning-path.md), [preparation plan](guides/preparation-plan.md), [course companion](guides/course-companion.md), [Mentor playbook](guides/mentor-playbook.md), [templates](guides/project-templates.md) and [reading list](guides/reading-list.md) as references. The [original data guide](data/README.md) and [linked-data guide](data/linked_review/README.md) describe the independent practice datasets.
+Use [Start here](guides/start-here.md), [the glossary](guides/glossary.md), [learning routes](guides/learning-path.md), [preparation plan](guides/preparation-plan.md), [learning workshops](guides/learning-workshops.md), [Mentor playbook](guides/mentor-playbook.md), [templates](guides/project-templates.md) and [reading list](guides/reading-list.md) as references. The [original data guide](data/README.md) and [linked-data guide](data/linked_review/README.md) describe the independent practice datasets.
 
-## New course preparation exercises
+New to programming and services? Use [the foundations checklist](guides/foundations-checklist.md) for files/processes, types, APIs, database transactions, concurrency and uncertainty. Read [data coverage and next steps](guides/data-coverage-and-next-steps.md) to see which skills the supplied examples support and which need additional data, code or live-service evidence.
+
+## Linked-data and tool-integration exercises
 
 ```powershell
 py -3 -m venv .venv-learning
@@ -64,7 +66,7 @@ py -3 -m venv .venv-learning
 .\.venv-learning\Scripts\python.exe -m pytest tutorials/integration -v
 ```
 
-These commands use local tools and constructed replay, not a live model. The MCP client launches a real local subprocess. Optional Azure Search is a separate, explicitly live exercise in lesson 06. Start with lessons 01–07 and the course companion for the first-week bridge; defer cloud setup until the relevant service is available.
+These commands use local tools and constructed replay, not a live model. The MCP client launches a real local subprocess. Optional Azure Search is a separate, explicitly live exercise in lesson 06. Start with lessons 01–07 and the learning workshops for the local learning path; defer cloud setup until the relevant service is available.
 
 ## One shared project, several model backends
 

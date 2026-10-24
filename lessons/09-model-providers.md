@@ -50,7 +50,7 @@ python -m examples.ai_systems chat --provider gemini --prompt "Explain a tool ca
 python -m examples.ai_systems agent --provider gemini --prompt "What is the risk tier for C-1002?"
 ```
 
-`-MaskInput` requires PowerShell 7. On Windows PowerShell 5.1, use your approved secret-management method or enter the environment value through your editor's secret configuration. Select a tool-capable model from the provider's current documentation/account, not a model name copied from an old course.
+`-MaskInput` requires PowerShell 7. On Windows PowerShell 5.1, use your approved secret-management method or enter the environment value through your editor's secret configuration. Select a tool-capable model from the provider's current documentation/account, rather than a model name copied from an outdated example.
 
 The runnable native REST examples use Python's standard library: no vendor SDK installation is required. They have a 45-second timeout per request, six model steps and ten tool calls by default, with no automatic HTTP retries. A timeout does not prove a server operation was cancelled.
 

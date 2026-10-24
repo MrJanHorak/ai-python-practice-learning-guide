@@ -1,6 +1,6 @@
 # Prep Plan and Exercises
 
-A hands-on plan that mirrors your project's arc. Start at [README](../README.md), use the supplied synthetic data, and complete [the project workbook](../lessons/14-project-workbook.md). The actual lab stack and internal rubrics still need confirmation from the lead.
+A hands-on plan that mirrors your project's arc. Start at [README](../README.md), use the supplied synthetic data, and complete [the project workbook](../lessons/14-project-workbook.md). Choose your pace and success criteria; local exercises do not require an organisation account.
 
 ---
 
@@ -11,9 +11,9 @@ A hands-on plan that mirrors your project's arc. Start at [README](../README.md)
 3. **Choose the right evidence:** context/search (06). Find the right policy version locally before trying Azure Search.
 4. **Connect real tools:** MCP/integration tests (07). List tools, inspect an error and prove one write survives a retry without duplication.
 5. **Measure and explain:** evaluation (08), then the reliability cost exercise (12). Distinguish authored/replay/live results and preserve unverified gaps.
-6. **Add live services when ready:** provider comparison (09), Azure (10), oversight (11) and document pipelines (13). Finish the workbook (14) and rehearse mentoring with the course companion.
+6. **Add live services when ready:** provider comparison (09), Azure (10), oversight (11) and document pipelines (13). Finish the workbook (14) and rehearse mentoring with the learning workshops.
 
-Allow several sessions; installation and new concepts can take longer than running the commands. Use [the course companion](course-companion.md) for the day-by-day bridge and [the glossary](glossary.md) whenever a word is unfamiliar. Complete the local path before spending time on unavailable services. Use one live model provider first, then compare through [the provider lesson](../lessons/09-model-providers.md).
+Allow several sessions; installation and new concepts can take longer than running the commands. Use [the learning workshops](learning-workshops.md) to plan a practical sequence and [the glossary](glossary.md) whenever a word is unfamiliar. Complete the local path before spending time on unavailable services. Use one live model provider first, then compare through [the provider lesson](../lessons/09-model-providers.md).
 
 ## Exercise 0: Data readiness
 
@@ -184,10 +184,10 @@ Also map the human workflow before and after the change: reviewer, evidence, app
 - [ ] Coach a learner through one failure using staged hints
 - [ ] Explain project outcomes against agreed acceptance criteria
 
-## Questions to ask the mentor or project owner (if you haven't yet)
+## Decisions to record for yourself or with a study partner
 
-1. Exactly what is the Mentor's role in labs, grading and escalation?
-2. Which agent tool and models will learners use, and can mentors get access early?
-3. Can we get the practice repository, broken-agent exercise, datasets and reference solutions in advance?
-4. Which Azure services and subscriptions are provisioned, and what access will mentors have?
-5. Which risk standards and project review criteria apply to this work?
+1. Will you study independently, pair with someone or ask a Mentor to review evidence?
+2. Which coding tool and application models can you access, and which exercises will remain offline?
+3. Can you reproduce a baseline and keep expected outcomes separate from model inputs?
+4. If you choose Azure, which subscription, resource scope, permissions, cost limit and cleanup plan will you use?
+5. What requirements, forbidden actions and evidence will define success for your project?

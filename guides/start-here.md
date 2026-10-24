@@ -10,6 +10,8 @@ You should be able to run a terminal command and read simple functions, lists an
 
 The first exercises use generated data and scripted responses. They need no model account, API key or cloud subscription. Pytest requires a small package installation. Live model, UI and Azure exercises are clearly marked extensions.
 
+If words such as process, API, transaction or probability are unfamiliar, work through [the foundations checklist](foundations-checklist.md) alongside the lessons. Use [the data coverage guide](data-coverage-and-next-steps.md) to choose extensions without confusing small practice fixtures with a realistic benchmark.
+
 ## Choose a first route
 
 | Your starting point | Read and do | First milestone |
@@ -23,12 +25,12 @@ Suggested resource order (the [root README](../README.md) links every lesson):
 
 1. [AI systems foundations](../lessons/01-ai-systems-foundations.md): the mental model and a worked trace.
 2. [Python](../lessons/02-python.md) and [pytest](../lessons/03-pytest.md): read, run and test small pieces.
-3. Lessons [04: configuration/replay](../lessons/04-files-configuration-and-replay.md), [05: scope/data](../lessons/05-scope-and-linked-data.md), [06: context/search](../lessons/06-context-and-search.md) and [07: MCP](../lessons/07-mcp-and-integration-tests.md): understand the course's integration patterns with independent local exercises.
+3. Lessons [04: configuration/replay](../lessons/04-files-configuration-and-replay.md), [05: scope/data](../lessons/05-scope-and-linked-data.md), [06: context/search](../lessons/06-context-and-search.md) and [07: MCP](../lessons/07-mcp-and-integration-tests.md): understand these integration patterns with independent local exercises.
 4. [08: evaluation](../lessons/08-evaluation.md): baselines, metrics, holdouts and error analysis.
 5. [09: providers](../lessons/09-model-providers.md) and [10: Azure](../lessons/10-azure.md): optional live/local integrations after offline concepts make sense.
 6. [11: oversight](../lessons/11-oversight-permissions-and-red-teaming.md), [12: reliability/transfer](../lessons/12-reliability-and-transfer.md) and [13: documents/privacy](../lessons/13-document-pipelines-and-privacy.md): control actions, measure operation and handle evidence.
 7. [14: workbook](../lessons/14-project-workbook.md): combine the ideas. Use it earlier when a short practice session helps.
-8. [Course companion](course-companion.md), [Mentoring](mentor-playbook.md) and [Templates](project-templates.md): prepare to support the actual exercises and explain evidence.
+8. [Learning workshops](learning-workshops.md), [Mentoring](mentor-playbook.md) and [Templates](project-templates.md): plan self-study, pair with someone and explain evidence.
 
 Lessons are numbered in the recommended learning order; reference guides are unnumbered. Use [the glossary](glossary.md) when a term blocks your understanding rather than memorizing it in advance.
 

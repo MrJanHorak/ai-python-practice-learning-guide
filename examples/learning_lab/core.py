@@ -102,7 +102,7 @@ def profile(root=DATA):
 
 
 def run_case(application_id, queue, *, context='current', fault=None, call=None, root=DATA):
-    """A fixed trajectory, NOT a model selecting actions or a course replay engine."""
+    """A fixed trajectory, not a model selecting actions or a general replay engine."""
     verify_manifest(root)
     recordings = read_json('recordings.json', root)
     if application_id not in recordings or context != 'current' or fault not in (None, 'search_unavailable'):

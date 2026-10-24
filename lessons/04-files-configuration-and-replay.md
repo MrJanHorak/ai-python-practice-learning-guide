@@ -11,7 +11,7 @@ py -3 -m venv .venv-learning
 .\.venv-learning\Scripts\python.exe -m pip install -r requirements-learning.txt
 ```
 
-Select this interpreter in your editor. In later commands, replace `python` with `.\.venv-learning\Scripts\python.exe` if the environment is not activated. A virtual environment is a project-specific package folder. These packages are for this guide; use the supplied requirements file when working in the actual course repository.
+Select this interpreter in your editor. In later commands, replace `python` with `.\.venv-learning\Scripts\python.exe` if the environment is not activated. A virtual environment is a project-specific package folder. These packages are for this guide. In another project, use that project's documented dependencies rather than assuming identical versions apply.
 
 ## 2. Three formats, three jobs
 
@@ -76,10 +76,10 @@ for line in Path("output/practice.jsonl").read_text(encoding="utf-8-sig").splitl
 |---|---|---|
 | Fake model | Your code returns an authored answer | Your application handles that answer |
 | This guide's authored replay | A fixed Python trajectory runs real local tools and attaches scripted text/usage | The specified tools, state and fixture checks work together |
-| Course replay | The supplied harness uses its recorded responses and checks its expected signatures | The course's supported recorded path behaves as checked |
+| Recorded-response replay | A harness uses previously captured model responses and checks the declared input/version signature | The supported recorded path behaves as checked; fresh generation remains untested |
 | Live model | A configured model generates a new response | Evidence for that model/configuration on those inputs |
 
-The new runner is deliberately small: it does not ask a model which tool to use and is not interchangeable with the course's harness. Read the `origin` and `mode` fields. Token numbers are invented, not measured model usage.
+The new runner is deliberately small: it does not ask a model which tool to use and does not implement a general recorded-response replay engine. Read the `origin` and `mode` fields. Token numbers are invented, not measured model usage.
 
 Try `python -m examples.learning_lab run --context changed`. It returns `replay_missing` with `evaluated: false`. An unsupported case/context/fault combination is a coverage gap, not a successful evaluation. Supported variants are `current`, the six authored IDs, and the optional `search_unavailable` fault. The manifest also rejects changed fixture bytes. It does not attest to every dependency, prompt or environment setting.
 

@@ -43,7 +43,7 @@ Before viewing the [answer key](../data/linked_review/expected_outcomes.json), c
 
 The first applicable status in this table wins, but all reasons must survive. In application 5006, the possible match takes precedence and the missing-document reason remains. Every status still requires a person to decide. Our result's `pending` field follows the simplified status convention; inspect reasons as well to understand outstanding work. `NO_FLAGS` means neither “approved” nor “safe in every respect.”
 
-The older invoice project's `validated/review` labels describe extraction checks. Its CLI `approved/rejected` action is a human decision about a local review record. It is not an application decision and should not appear as an application approval feature in a course adaptation.
+The older invoice project's `validated/review` labels describe extraction checks. Its CLI `approved/rejected` action is a human decision about a local review record. It is not an application decision and must not be confused with permission to approve an application.
 
 ## 4. Keep hard rules separate from ordinary quality scores
 
@@ -56,11 +56,11 @@ A **hard rule** is a condition that must always hold within the exercise. Check 
 - Missing or failed data must not produce a recommendation.
 - For an AML extension, do not automate alert closure, report filing or applicant notifications.
 
-The small runner always returns `recommendation: null` and `human_decision_required: true`. It illustrates a few of these boundaries, not a complete implementation of every course rule. The course's supplied contract and tests remain authoritative for its labs.
+The small runner always returns `recommendation: null` and `human_decision_required: true`. It illustrates some boundaries rather than implementing every possible workflow rule. Define and test the complete contract before extending the project.
 
 ## 5. Change one thing with a coding agent
 
-Create a scratch Git branch before experimenting. Git records versions of files; a branch gives your changes a name. Run `git status`, `git switch -c practice/linked-data` and the tests before editing. Use your actual course branch convention in its repository.
+Create a scratch Git branch before experimenting. Git records versions of files; a branch gives your changes a name. Run `git status`, `git switch -c practice/linked-data` and the tests before editing. The branch name is your choice; use a clear name for the experiment.
 
 Ask your coding agent to add one orphan-document check using a temporary fixture, with one failing test before the fix. Review `git diff`, explain each changed line and rerun the named test. A coding agent edits files; it is separate from the model an application calls while running. The same scoped request can be used with Claude Code, Codex or Gemini CLI.
 

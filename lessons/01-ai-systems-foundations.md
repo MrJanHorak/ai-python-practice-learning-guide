@@ -46,7 +46,7 @@ These categories can be combined. They do not imply that every application needs
 
 The probability of a next token, a model's verbal confidence and an extraction service's field-confidence value are different quantities. Assess correctness against evidence and labeled outcomes for your actual task.
 
-For deeper architecture and training study, use [the Hugging Face LLM course](https://huggingface.co/learn/llm-course/en/chapter1/1). This guide concentrates on application engineering.
+For deeper architecture and training study, use [the Hugging Face LLM tutorial](https://huggingface.co/learn/llm-course/en/chapter1/1). This guide concentrates on application engineering.
 
 ## 4. Four ways to improve an application
 

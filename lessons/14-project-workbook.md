@@ -99,9 +99,9 @@ Rehearse a five-minute technical explanation and a two-minute nontechnical expla
 
 Completion check: demonstrate the working data + agent + interface, eval results, risk/ownership decisions, deployment plan and handoff brief. Extend the project by integrating extraction, orchestration and knowledge support, then apply the patterns to another domain.
 
-## Course preparation extension: connect the newer lessons
+## Integration workshops: connect the lessons
 
-The eight sessions above use the original invoice/provider project. For the linked-record course patterns, complete these additional sessions without mixing datasets:
+The eight sessions above use the original invoice/provider project. For the linked-record integration patterns, complete these additional sessions without mixing datasets:
 
 1. **Scope/data/configuration:** lessons 04–05. Profile `data/linked_review/`, read the YAML example and write scope plus open questions with owners. Completion: explain one join and one coverage gap.
 2. **Context/search:** lesson 06. Retrieve the current scoped policy, minimise document fields and test must-keep state. Completion: wrong-jurisdiction and stale-policy tests fail when filters are deliberately broken. Azure is optional.
@@ -109,4 +109,4 @@ The eight sessions above use the original invoice/provider project. For the link
 4. **Evaluation/oversight:** lessons 08 and 11. Write independent expected behavior, compare matching suite versions and record attack attempts. Completion: separate hard-rule evidence, ordinary quality scores and unverified conditions.
 5. **Operations/documents/handoff:** lessons 12–13 and the templates. Explain per-case cost, a monitoring action, repeated document groups and privacy at each boundary. Completion: another learner can reproduce your evidence and name its limitations.
 
-Use [the course companion](../guides/course-companion.md) to rehearse the actual day's starter, allowed edit scope and baseline counts. The practice runner has no interface; the original Streamlit interface is a separate teaching example, not the supplied course UI.
+Use [the learning workshops](../guides/learning-workshops.md) to choose a project, define a small change and record baseline results. The practice runner has no interface; the original Streamlit interface is part of the separate invoice/provider example.

@@ -4,7 +4,9 @@ All records, documents and policy rules here were authored for learning. They co
 
 ## Inventory
 
-The original customer/invoice fixtures below remain available. The separate [linked-review dataset](linked_review/README.md) adds applications, parties, documents, policy versions, scripted replay and usage examples for the new course preparation path. It uses its own identifiers and manifest.
+The original customer/invoice fixtures below remain available. The separate [linked-review dataset](linked_review/README.md) adds applications, parties, documents, policy versions, scripted replay and usage examples for the linked-record learning path. It uses its own identifiers and manifest.
+
+For a skill-by-skill assessment of these datasets and their limits, see [data coverage and next steps](../guides/data-coverage-and-next-steps.md). Small fixtures support inspection and debugging; realistic evaluation needs independently chosen variation and representative evidence.
 
 | File | Contents | Exercise |
 |---|---|---|

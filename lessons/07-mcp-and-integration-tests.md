@@ -80,7 +80,7 @@ The replay's `search_unavailable` fault demonstrates a different rule: bounded r
 python -m examples.learning_lab run --case PRACTICE-APP-5002 --fault search_unavailable
 ```
 
-Inspect two search attempts, `POLICY_UNAVAILABLE`, and `review_count: 1`. This is a chosen teaching retry budget, not a copy of every course budget.
+Inspect two search attempts, `POLICY_UNAVAILABLE`, and `review_count: 1`. This retry budget is an explicit example choice; other workflows need their own justified limit.
 
 ## 7. Read the test summary honestly
 
@@ -93,7 +93,7 @@ Inspect two search attempts, `POLICY_UNAVAILABLE`, and `review_count: 1`. This i
 | deselected | Your command/configuration excluded the check |
 | xfailed / xpassed | An expected failure occurred / unexpectedly passed; inspect the marker policy |
 
-Run `python -m pytest tutorials/integration --collect-only -q` and compare with `python -m pytest tutorials/integration -ra`. `-ra` explains non-passing outcomes. Course starters sometimes intentionally skip unfinished tests or exclude assignment tests by default. Record the exact folder, build/recording variant, command and selected test names. Do not copy a pass count from a different starter. [Pytest skip/xfail guidance](https://docs.pytest.org/en/stable/how-to/skipping.html)
+Run `python -m pytest tutorials/integration --collect-only -q` and compare with `python -m pytest tutorials/integration -ra`. `-ra` explains non-passing outcomes. An unfamiliar project may skip tests when dependencies are absent or exclude checks through configuration. Record the exact folder, build/recording variant, command and selected test names. Do not copy a pass count from a different project or test selection. [Pytest skip/xfail guidance](https://docs.pytest.org/en/stable/how-to/skipping.html)
 
 **Practice:** on a scratch branch, make search use the wrong jurisdiction. Watch a meaningful argument/result test fail, then fix the implementation without weakening the expectation. Explain what the MCP test proves that a direct-function test does not.
 

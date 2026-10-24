@@ -1,1 +1,1 @@
-"""Independent practice exercises; not a copy of the course implementation."""
+"""Independent practice exercises for linked data, local tools and replay."""

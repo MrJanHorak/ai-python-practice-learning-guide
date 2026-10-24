@@ -11,7 +11,7 @@
 | HOOTL: human out of the loop | The step runs without routine human intervention | Deterministic date-format validation |
 | HITC: human in command | People set objectives, limits and accountable ownership | Owner determines what may be automated and can withdraw permission |
 
-Use the course's exact definitions when assessing its exercises. These modes can apply to different steps in one system; they are not an overall safety score. Monitoring after a write does not substitute for authorization before it.
+Write down the definitions and responsibilities you use for your project. These modes can apply to different steps in one system; they are not an overall safety score. Monitoring after a write does not substitute for authorization before it.
 
 ## 2. Make a permission table
 
